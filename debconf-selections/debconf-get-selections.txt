@@ -1,0 +1,541 @@
+# Dummy template
+adduser	adduser/homedir-permission	boolean	false
+# Yderligere placeringer af hjemmemapper:
+apparmor	apparmor/homedirs	string	
+# Be om bekreftelse etter at endringer er vist?
+apt-listchanges	apt-listchanges/confirm	boolean	false
+# E-postadresse(r) som skal motta endringer:
+apt-listchanges	apt-listchanges/email-address	string	root
+# Format på e-postbeskeder:
+# Choices: tekst, html
+apt-listchanges	apt-listchanges/email-format	select	text
+# Metode som skal brukes til å vise endringer:
+# Choices: sideviser, nettviser, xterm-sideviser, xterm-nettviser, gtk, tekst, e-post, ingen
+apt-listchanges	apt-listchanges/frontend	select	pager
+# Indsæt teksthoveder før ændringslogge?
+apt-listchanges	apt-listchanges/headers	boolean	false
+# Deaktiver indsamling af ændringer over netværk?
+apt-listchanges	apt-listchanges/no-network	boolean	false
+# Vis ændringer i omvendt rækkefølge?
+apt-listchanges	apt-listchanges/reverse	boolean	false
+# Skal apt-listchanges hoppe over endringer som allerede er sett?
+apt-listchanges	apt-listchanges/save-seen	boolean	true
+# Endringer som vises med APT:
+# Choices: nyheter, endringslogger, begge
+apt-listchanges	apt-listchanges/which	select	news
+# Dummy template
+apt-mirror-setup	apt-setup/contrib	boolean	true
+# Dummy template
+apt-mirror-setup	apt-setup/non-free	boolean	true
+# Norsk språkvariant:
+# Choices: nynorsk, bokmål
+aspell-no	aspell-no/whichvariant	select	bokmaal
+# Ønsker du at tilføje gruppen ?
+base-passwd	base-passwd/group-add	boolean	true
+# Ønsker du at ændre GID'en for gruppen ?
+base-passwd	base-passwd/group-change-gid	boolean	true
+# Ønsker du at flytte gruppen ?
+base-passwd	base-passwd/group-move	boolean	true
+# Ønsker du at fjerne gruppen ?
+base-passwd	base-passwd/group-remove	boolean	true
+# Ønsker du at tilføje brugeren ?
+base-passwd	base-passwd/user-add	boolean	true
+# Ønsker du at ændre GECOS-en for brugeren ?
+base-passwd	base-passwd/user-change-gecos	boolean	true
+# Ønsker du at ændre GID'en for brugeren ?
+base-passwd	base-passwd/user-change-gid	boolean	true
+# Ønsker du at ændre hjemmemappen for brugeren ?
+base-passwd	base-passwd/user-change-home	boolean	true
+# Ønsker du at ændre skallen for brugeren ?
+base-passwd	base-passwd/user-change-shell	boolean	true
+# Ønsker du at ændre UID'en for brugeren ?
+base-passwd	base-passwd/user-change-uid	boolean	true
+# Ønsker du at flytte brugeren ?
+base-passwd	base-passwd/user-move	boolean	true
+# Ønsker du at fjerne brugeren ?
+base-passwd	base-passwd/user-remove	boolean	true
+# Certifikater at aktivere:
+# Choices: mozilla/ACCVRAIZ1.crt, mozilla/AC_RAIZ_FNMT-RCM.crt, mozilla/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt, mozilla/ANF_Secure_Server_Root_CA.crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/Amazon_Root_CA_1.crt, mozilla/Amazon_Root_CA_2.crt, mozilla/Amazon_Root_CA_3.crt, mozilla/Amazon_Root_CA_4.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CFCA_EV_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/COMODO_RSA_Certification_Authority.crt, mozilla/Certainly_Root_E1.crt, mozilla/Certainly_Root_R1.crt, mozilla/Certigna.crt, mozilla/Certigna_Root_CA.crt, mozilla/Certum_EC-384_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Certum_Trusted_Network_CA_2.crt, mozilla/Certum_Trusted_Root_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/D-TRUST_BR_Root_CA_1_2020.crt, mozilla/D-TRUST_EV_Root_CA_1_2020.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_TLS_ECC_P384_Root_G5.crt, mozilla/DigiCert_TLS_RSA4096_Root_G5.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/E-Tugra_Global_Root_CA_ECC_v3.crt, mozilla/E-Tugra_Global_Root_CA_RSA_v3.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Entrust_Root_Certification_Authority_-_EC1.crt, mozilla/Entrust_Root_Certification_Authority_-_G2.crt, mozilla/Entrust_Root_Certification_Authority_-_G4.crt, mozilla/GDCA_TrustAUTH_R5_ROOT.crt, mozilla/GLOBALTRUST_2020.crt, mozilla/GTS_Root_R1.crt, mozilla/GTS_Root_R2.crt, mozilla/GTS_Root_R3.crt, mozilla/GTS_Root_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R5.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/GlobalSign_Root_CA_-_R6.crt, mozilla/GlobalSign_Root_E46.crt, mozilla/GlobalSign_Root_R46.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/HARICA_TLS_ECC_Root_CA_2021.crt, mozilla/HARICA_TLS_RSA_Root_CA_2021.crt, mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt, mozilla/HiPKI_Root_CA_-_G1.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/Hongkong_Post_Root_CA_3.crt, mozilla/ISRG_Root_X1.crt, mozilla/ISRG_Root_X2.crt, mozilla/IdenTrust_Commercial_Root_CA_1.crt, mozilla/IdenTrust_Public_Sector_Root_CA_1.crt, mozilla/Izenpe.com.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/Microsoft_ECC_Root_Certificate_Authority_2017.crt, mozilla/Microsoft_RSA_Root_Certificate_Authority_2017.crt, mozilla/NAVER_Global_Root_Certification_Authority.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt, mozilla/OISTE_WISeKey_Global_Root_GC_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt, mozilla/SSL.com_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_Root_Certification_Authority_RSA.crt, mozilla/SZAFIR_ROOT_CA2.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_ECC_RootCA1.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_RootCA3.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/Telia_Root_CA_v2.crt, mozilla/TrustCor_ECA-1.crt, mozilla/TrustCor_RootCert_CA-1.crt, mozilla/TrustCor_RootCert_CA-2.crt, mozilla/Trustwave_Global_Certification_Authority.crt, mozilla/Trustwave_Global_ECC_P256_Certification_Authority.crt, mozilla/Trustwave_Global_ECC_P384_Certification_Authority.crt, mozilla/TunTrust_Root_CA.crt, mozilla/UCA_Extended_Validation_Root.crt, mozilla/UCA_Global_G2_Root.crt, mozilla/USERTrust_ECC_Certification_Authority.crt, mozilla/USERTrust_RSA_Certification_Authority.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/certSIGN_Root_CA_G2.crt, mozilla/e-Szigno_Root_CA_2017.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/emSign_ECC_Root_CA_-_C3.crt, mozilla/emSign_ECC_Root_CA_-_G3.crt, mozilla/emSign_Root_CA_-_C1.crt, mozilla/emSign_Root_CA_-_G1.crt, mozilla/vTrus_ECC_Root_CA.crt, mozilla/vTrus_Root_CA.crt
+ca-certificates	ca-certificates/enable_crts	multiselect	mozilla/ACCVRAIZ1.crt, mozilla/AC_RAIZ_FNMT-RCM.crt, mozilla/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt, mozilla/ANF_Secure_Server_Root_CA.crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/Amazon_Root_CA_1.crt, mozilla/Amazon_Root_CA_2.crt, mozilla/Amazon_Root_CA_3.crt, mozilla/Amazon_Root_CA_4.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CFCA_EV_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/COMODO_RSA_Certification_Authority.crt, mozilla/Certainly_Root_E1.crt, mozilla/Certainly_Root_R1.crt, mozilla/Certigna.crt, mozilla/Certigna_Root_CA.crt, mozilla/Certum_EC-384_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Certum_Trusted_Network_CA_2.crt, mozilla/Certum_Trusted_Root_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/D-TRUST_BR_Root_CA_1_2020.crt, mozilla/D-TRUST_EV_Root_CA_1_2020.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_TLS_ECC_P384_Root_G5.crt, mozilla/DigiCert_TLS_RSA4096_Root_G5.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/E-Tugra_Global_Root_CA_ECC_v3.crt, mozilla/E-Tugra_Global_Root_CA_RSA_v3.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Entrust_Root_Certification_Authority_-_EC1.crt, mozilla/Entrust_Root_Certification_Authority_-_G2.crt, mozilla/Entrust_Root_Certification_Authority_-_G4.crt, mozilla/GDCA_TrustAUTH_R5_ROOT.crt, mozilla/GLOBALTRUST_2020.crt, mozilla/GTS_Root_R1.crt, mozilla/GTS_Root_R2.crt, mozilla/GTS_Root_R3.crt, mozilla/GTS_Root_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R4.crt, mozilla/GlobalSign_ECC_Root_CA_-_R5.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/GlobalSign_Root_CA_-_R6.crt, mozilla/GlobalSign_Root_E46.crt, mozilla/GlobalSign_Root_R46.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/HARICA_TLS_ECC_Root_CA_2021.crt, mozilla/HARICA_TLS_RSA_Root_CA_2021.crt, mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt, mozilla/HiPKI_Root_CA_-_G1.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/Hongkong_Post_Root_CA_3.crt, mozilla/ISRG_Root_X1.crt, mozilla/ISRG_Root_X2.crt, mozilla/IdenTrust_Commercial_Root_CA_1.crt, mozilla/IdenTrust_Public_Sector_Root_CA_1.crt, mozilla/Izenpe.com.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/Microsoft_ECC_Root_Certificate_Authority_2017.crt, mozilla/Microsoft_RSA_Root_Certificate_Authority_2017.crt, mozilla/NAVER_Global_Root_Certification_Authority.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt, mozilla/OISTE_WISeKey_Global_Root_GC_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt, mozilla/SSL.com_Root_Certification_Authority_ECC.crt, mozilla/SSL.com_Root_Certification_Authority_RSA.crt, mozilla/SZAFIR_ROOT_CA2.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_ECC_RootCA1.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_RootCA3.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/Telia_Root_CA_v2.crt, mozilla/TrustCor_ECA-1.crt, mozilla/TrustCor_RootCert_CA-1.crt, mozilla/TrustCor_RootCert_CA-2.crt, mozilla/Trustwave_Global_Certification_Authority.crt, mozilla/Trustwave_Global_ECC_P256_Certification_Authority.crt, mozilla/Trustwave_Global_ECC_P384_Certification_Authority.crt, mozilla/TunTrust_Root_CA.crt, mozilla/UCA_Extended_Validation_Root.crt, mozilla/UCA_Global_G2_Root.crt, mozilla/USERTrust_ECC_Certification_Authority.crt, mozilla/USERTrust_RSA_Certification_Authority.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/certSIGN_Root_CA_G2.crt, mozilla/e-Szigno_Root_CA_2017.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/emSign_ECC_Root_CA_-_C3.crt, mozilla/emSign_ECC_Root_CA_-_G3.crt, mozilla/emSign_Root_CA_-_C1.crt, mozilla/emSign_Root_CA_-_G1.crt, mozilla/vTrus_ECC_Root_CA.crt, mozilla/vTrus_Root_CA.crt
+# Nye certifikater at aktivere:
+# Choices: 
+ca-certificates	ca-certificates/new_crts	multiselect	
+# Stol på nye certifikater fra certifikatautoriteter?
+# Choices: ja, nej, spørg
+ca-certificates	ca-certificates/trust_new_crts	select	yes
+# Dummy template
+d-i	clock-setup/utc	boolean	true
+# Tegnkoding som skal brukes i konsollet:
+# Choices: ARMSCII-8, CP1251, CP1255, CP1256, GEORGIAN-ACADEMY, GEORGIAN-PS, IBM1133, ISIRI-3342, ISO-8859-1, ISO-8859-10, ISO-8859-11, ISO-8859-13, ISO-8859-14, ISO-8859-15, ISO-8859-16, ISO-8859-2, ISO-8859-3, ISO-8859-4, ISO-8859-5, ISO-8859-6, ISO-8859-7, ISO-8859-8, ISO-8859-9, KOI8-R, KOI8-U, TIS-620, UTF-8, VISCII
+console-setup	console-setup/charmap47	select	UTF-8
+# Tegnsett som skal støttes:
+# Choices: . Arabisk, # Armensk, # Kyrillisk - KOI8-R og KOI8-U, # Kyrillisk - ikke-slaviske språk, . Kyrillisk - ikke-slaviske språk (for blinde brukere), # Kyrillisk - slaviske språk (også bosnisk og serbisk latin), . Kyrillisk - slaviske språk (for blinde brukere), . Etiopisk, # Georgisk, # Gresk, . Gresk (for blinde brukere), # Hebraisk, # Lao, Latin1 og Latin5 - Vest-Europa og tyrkiske språk, # Latin2 - Sentral-Europa og rumensk, # Latin3 og Latin8 - chichewa\, esperanto\, irsk\, maltesisk og walisisk, # Latin7 - litauisk\, latvisk\, maori og marshallesisk, . Latin - vietnamesisk, # Thai, . Kombinert - latin\, slavisk kyrillisk\, hebraisk og grunnleggende arabisk, . Kombinert - latin\, slavisk kyrillisk og gresk, . Kombinert - latin\, slavisk og ikke-slavisk kyrillisk, Gjett optimal tegnsett
+console-setup	console-setup/codeset47	select	# Latin1 and Latin5 - western Europe and Turkic languages
+# for internal use
+console-setup	console-setup/codesetcode	string	Lat15
+# Skrift for konsollet:
+# Choices: Fixed, Terminus, TerminusBold, TerminusBoldVGA, VGA, Ikke forandre skriften for boot/kernel-en, La systemet velge en passende skrift
+console-setup	console-setup/fontface47	select	Fixed
+# for internal use
+console-setup	console-setup/fontsize	string	8x16
+# Skriftstørrelse:
+# Choices: 8x13, 8x14, 8x15, 8x16, 8x18
+console-setup	console-setup/fontsize-fb47	select	8x16
+# Skriftstørrelse:
+# Choices: 
+console-setup	console-setup/fontsize-text47	select	8x16
+# for internal use
+console-setup	console-setup/store_defaults_in_debconf_db	boolean	true
+# Dummy template
+cpufrequtils	cpufrequtils/enable	boolean	true
+# Vil du sette opp en tjener kompatibel med BSD lpd?
+cups-bsd	cups-bsd/setuplpd	boolean	false
+# Kommunikasjonsmotorer for skriver:
+# Choices: lpd, sokkel, usb, snmp, dnssd
+cups	cupsys/backend	multiselect	lpd, socket, usb, snmp, dnssd
+# Vil du at CUPS skal skrive ut ukjente jobber som rå utskrift?
+cups	cupsys/raw-print	boolean	true
+# Ønsket brukerflate:
+# Choices: Dialog, Readline, Gnome, Kde, Redigering, Ikke-interaktiv
+debconf	debconf/frontend	select	Dialog
+# Hopp over spørsmål med lavere prioritet enn:
+# Choices: kritisk, høy, middels, lav
+debconf	debconf/priority	select	high
+# Ønsker du å kjøre enable-nat på ditt system?
+debian-edu-config	debian-edu-config/enable-nat	boolean	false
+# for internal use: The full name of the first user in LDAP:
+debian-edu-config	debian-edu-config/first-user-fullname	string	
+# for internal use: The username of the first user in LDAP:
+debian-edu-config	debian-edu-config/first-user-name	string	
+# for internal use: The password of the initial user:
+debian-edu-config	debian-edu-config/first-user-password	password	
+# Skriv inn hovednøkkel for Kerberos KDC:
+debian-edu-config	debian-edu-config/kdc-password	password	
+# Skriv passordet på nytt for å bekrefte:
+debian-edu-config	debian-edu-config/kdc-password-again	password	
+# Tomt passord
+debian-edu-config	debian-edu-config/kdc-password-empty	error	
+# Feil med passordinnskriving
+debian-edu-config	debian-edu-config/kdc-password-mismatch	error	
+# Skriv inn LDAPs super-admin-passord:
+debian-edu-config	debian-edu-config/ldap-password	password	
+# Skriv passordet på nytt for å bekrefte:
+debian-edu-config	debian-edu-config/ldap-password-again	password	
+# Tomt passord
+debian-edu-config	debian-edu-config/ldap-password-empty	error	
+# Feil med passordinnskriving
+debian-edu-config	debian-edu-config/ldap-password-mismatch	error	
+# Skal skriptet init.d/update-hostname kjøre ved boot?
+debian-edu-config	debian-edu-config/update-hostname	boolean	false
+# Noen feil ble oppdaget under installation
+debian-edu-install	debian-edu-install/errors-found	error	
+# Ingen feil ble oppdaget under installation
+debian-edu-install	debian-edu-install/no-errors-found	note	
+# Dummy template
+# Choices: 
+debian-edu-install	debian-edu-install/profile	multiselect	Standalone
+# for internal use
+debian-edu-install	debian-edu-install/run-firstboot	boolean	false
+# for internal use; can be preseeded
+d-i	debian-installer/country	string	NO
+# for internal use only
+d-i	debian-installer/language	string	nb_NO:nb:no_NO:no:nn_NO:nn:da:sv:en
+# Debconf-databasen kan være ødelagt
+dictionaries-common	dictionaries-common/debconf_database_corruption	error	
+# Hvilken ispell-ordbok skal være systemets standard ordbok?
+# Choices: bokmål (Bokmal Norwegian), nynorsk (New Norwegian), Manuelt oppsett av symlenker
+dictionaries-common	dictionaries-common/default-ispell	select	bokmål (Bokmal Norwegian)
+# Systemets standard ordliste:
+# Choices: american (American English), bokmål (Bokmål Norwegian), nynorsk (New Norwegian), Manuelt oppsett av symlenker
+dictionaries-common	dictionaries-common/default-wordlist	select	american (American English)
+# Ugyldig oppsett for standard-ordbok
+dictionaries-common	dictionaries-common/invalid_debconf_value	error	
+# Problemer med å bygge på nytt en hash-fil for  ()
+dictionaries-common	dictionaries-common/ispell-autobuildhash-message	note	
+# Fjerne utdatert lenke til /etc/dictionary?
+dictionaries-common	dictionaries-common/old_wordlist_link	boolean	true
+# Standardverdier for ispell-ordbok/ordliste er ikke satt
+dictionaries-common	dictionaries-common/selecting_ispell_wordlist_default	note	
+# Pakker som skal installeres:
+# Choices: 
+discover	discover/install_hw_packages	multiselect	
+# Fjern etckeeper -arkiv og associerede filer?
+etckeeper	etckeeper/purge	boolean	true
+# Sett opp exim4-config i stedet for denne pakka
+exim4-base	exim4-base/drec	error	
+# Sett opp exim4-config i stedet for denne pakka
+exim4-daemon-light	exim4-daemon-light/drec	error	
+# Overordnet e-post-konfigurasjonstype:
+# Choices: internett-sted; e-post sendes og mottas direkte med SMTP, e-post sendt av smartvert; hentes via SMTP eller fetchmail, e-post sendt av smartvert; ingen lokal e-post, kun lokal levering; ikke på noe nettverk, ingen konfigurering nå
+exim4-config	exim4/dc_eximconfig_configtype	select	local delivery only; not on a network
+# IP-adresser det skal lyttes på etter innkommende SMTP-tilkoblinger:
+exim4-config	exim4/dc_local_interfaces	string	127.0.0.1 ; ::1
+# Leveringsmetode for lokal e-post:
+# Choices: mbox format i /var/mail/, Maildir-format i hjemmekatalogen
+exim4-config	exim4/dc_localdelivery	select	mbox format in /var/mail/
+# Minimer antall DNS-forespørsler (oppringning-etter-behov)?
+exim4-config	exim4/dc_minimaldns	boolean	false
+# Andre mottakere e-post mottas for:
+exim4-config	exim4/dc_other_hostnames	string	am-525400d748de.intern
+# Mottaker for root- og postmaster-epost:
+exim4-config	exim4/dc_postmaster	string	root
+# Synlig domenenavn for lokale brukere:
+exim4-config	exim4/dc_readhost	string	
+# Domener det skal videresendes e-post for:
+exim4-config	exim4/dc_relay_domains	string	
+# Maskiner det skal videresendes e-post for:
+exim4-config	exim4/dc_relay_nets	string	
+# IP-adresse eller vertsnavn for utgående smartvert:
+exim4-config	exim4/dc_smarthost	string	
+# Skjul lokalt postnavn i utgående post?
+exim4-config	exim4/hide_mailname	boolean	
+# Systemets epost-navn:
+exim4-config	exim4/mailname	string	am-525400d748de.intern
+# Er du sikker på at du vil la epost-systemet være uten oppsett?
+exim4-config	exim4/no_config	boolean	true
+# Fjern ikke-levert e-post i køkatalogen?
+exim4-base	exim4/purge_spool	boolean	false
+# Del oppsettet i mindre filer?
+exim4-config	exim4/use_split_config	boolean	false
+# Slå på bitkartskrift som standard?
+fontconfig-config	fontconfig/enable_bitmaps	boolean	false
+# Automatisk hinting-stil for skrifttype:
+# Choices: Ingen, Let, Mellem, Fuld
+fontconfig-config	fontconfig/hinting_style	select	hintslight
+# Skriftjusteringsmetode for skærm (systemstandard):
+# Choices: Innebygd, Autohinter, ingen
+fontconfig-config	fontconfig/hinting_type	select	Native
+# Slå på subpiksel-tegning for skjerm:
+# Choices: Automatisk, Alltid, Aldri
+fontconfig-config	fontconfig/subpixel_rendering	select	Automatic
+# xscreensaver og xlockmore må restartes før oppgradering
+libc6	glibc/disable-screensaver	error	
+libc6:amd64	glibc/disable-screensaver	error	
+# Kerneversion er ikke understøttet
+libc6	glibc/kernel-not-supported	note	
+libc6:amd64	glibc/kernel-not-supported	note	
+# Kernel must be upgraded
+libc6	glibc/kernel-too-old	error	
+libc6:amd64	glibc/kernel-too-old	error	
+# Noen tjenester kunne ikke restartes for GNU libc-oppgradering
+libc6	glibc/restart-failed	error	
+libc6:amd64	glibc/restart-failed	error	
+# Tjenester som skal restartes for oppgradering av GNU libc-biblioteket:
+libc6	glibc/restart-services	string	
+libc6:amd64	glibc/restart-services	string	
+# Vil du oppgradere glibc nå?
+libc6	glibc/upgrade	boolean	true
+libc6:amd64	glibc/upgrade	boolean	true
+# Opgrader gnumeric?
+gnumeric	gnumeric/existing-process	boolean	false
+# Dummy template
+d-i	grub-installer/only_debian	boolean	true
+# Kjedelaste fra menu.lst?
+grub-pc	grub-pc/chainload_from_menu.lst	boolean	true
+# Hide the GRUB timeout; for internal use
+grub-pc	grub-pc/hidden_timeout	boolean	false
+# GRUB installasjonsenheter:
+# Choices: 
+grub-pc	grub-pc/install_devices	multiselect	/dev/vda
+# GRUB installasjonsenheter:
+# Choices: 
+grub-pc	grub-pc/install_devices_disks_changed	multiselect	
+# Fortsett uten å installere GRUB?
+grub-pc	grub-pc/install_devices_empty	boolean	false
+# Klarte ikke skrive GRUB til oppstartsenhet - fortsette?
+grub-pc	grub-pc/install_devices_failed	boolean	false
+# Klarte ikke skrive GRUB til oppstartsenhet - prøve igjen?
+grub-pc	grub-pc/install_devices_failed_upgrade	boolean	true
+# for internal use
+grub-pc	grub-pc/kopt_extracted	boolean	false
+# Avslutt konvertering til GRUB 2 nå?
+grub-pc	grub-pc/mixed_legacy_and_grub2	boolean	true
+# Fjern GRUB 2 fra /boot/grub?
+grub-pc	grub-pc/postrm_purge_boot_grub	boolean	false
+# GRUB timeout; for internal use
+grub-pc	grub-pc/timeout	string	5
+# Kjør os-prober automatisk for å oppdage og starte opp andre OS-er?
+grub-pc	grub2/enable_os_prober	boolean	false
+# Tving ekstra installasjon til EFI-stien for flyttbare media?
+grub-pc	grub2/force_efi_extra_removable	boolean	false
+# Dummy template
+grub-pc	grub2/gnumach_cmdline	string	
+# Kommandolinje i kFreeBSD:
+grub-pc	grub2/kfreebsd_cmdline	string	
+# Standardkommandolinje i kFreeBSD:
+grub-pc	grub2/kfreebsd_cmdline_default	string	quiet
+# Kommandolinje i Linux:
+grub-pc	grub2/linux_cmdline	string	
+# Standardkommandolinje i Linux:
+grub-pc	grub2/linux_cmdline_default	string	quiet
+# Oppdatere NVRAM-variabler til å automatisk starte Debian?
+grub-pc	grub2/update_nvram	boolean	true
+# Dummy template
+hddtemp	hddtemp/daemon	boolean	false
+# Norsk språkvariant:
+# Choices: nynorsk, bokmål
+inorwegian	inorwegian/whichvariant	select	bokmaal
+# Allow ordinary users to run ip vrf exec using capabilities?
+iproute2	iproute2/setcaps	boolean	false
+# Pakker som skal installeres:
+# Choices: 
+isenkram-cli	isenkram/install_hw_packages	multiselect	
+# Aktiver realtidsprocesprioritet?
+jackd2	jackd/tweak_rt_limits	boolean	false
+# Tast som skal fungere som AltGr:
+# Choices: Standarden for tastaturutformingen, Ingen AltGr-tast, Høyre Alt (AltGr), Høyre Ctrl, Høyre logotast, Menytast, Venstre Alt, Venstre logotast, Enter-tasten på det numeriske tastaturet, Begge Logo-tastene, Begge Alt-tastene
+d-i	keyboard-configuration/altgr	select	The default for the keyboard layout
+keyboard-configuration	keyboard-configuration/altgr	select	The default for the keyboard layout
+# Compose-tast:
+# Choices: Ingen Compose-tast, Høyre Alt (AltGr), Høyre Ctrl, Høyre logotast, Menytast, Venstre logotast, Caps Lock
+d-i	keyboard-configuration/compose	select	No compose key
+keyboard-configuration	keyboard-configuration/compose	select	No compose key
+# Bruk Ctrl + Alt + Rettetast for å stoppe X-tjeneren?
+d-i	keyboard-configuration/ctrl_alt_bksp	boolean	false
+keyboard-configuration	keyboard-configuration/ctrl_alt_bksp	boolean	false
+# Opprinnelsesland for dette tastaturet:
+# Choices: 
+d-i	keyboard-configuration/layout	select	
+keyboard-configuration	keyboard-configuration/layout	select	
+# for internal use
+d-i	keyboard-configuration/layoutcode	string	no
+keyboard-configuration	keyboard-configuration/layoutcode	string	no
+# Tastaturtype:
+# Choices: A4Tech KB-21, A4Tech KBS-8, A4Tech Wireless Desktop RFKB-23, Acer AirKey V, Acer C300, Acer Ferrari 4000, Acer laptop, Advance Scorpius KI, Amiga, Apple, Apple Aluminium (ANSI), Apple Aluminium (ISO), Apple Aluminium (JIS), Apple laptop, Asus laptop, Atari TT, Azona RF2300 Wireless Internet, BenQ X-Touch, BenQ X-Touch 730, BenQ X-Touch 800, Brother Internet, BTC 5090, BTC 5113RF Multimedia, BTC 5126T, BTC 6301URF, BTC 9000, BTC 9000A, BTC 9001AH, BTC 9019U, BTC 9116U Mini Wireless Internet and Gaming, Cherry Blue Line CyBo@rd, Cherry Blue Line CyBo@rd (alt.), Cherry B.UNLIMITED, Cherry CyBo@rd USB-Hub, Cherry CyMotion Expert, Cherry CyMotion Master Linux, Cherry CyMotion Master XPress, Chicony Internet, Chicony KB-9885, Chicony KU-0108, Chicony KU-0420, Chromebook, Classmate PC, Compaq Armada laptop, Compaq Easy Access, Compaq Internet (13 keys), Compaq Internet (18 keys), Compaq Internet (7 keys), Compaq iPaq, Compaq Presario laptop, Creative Desktop Wireless 7000, Dell, Dell 101-key PC, Dell Inspiron 6000/8000 laptop, Dell Latitude laptop, Dell Precision M65 laptop, Dell Precision M laptop, Dell SK-8125, Dell SK-8135, Dell USB Multimedia, Dexxa Wireless Desktop, Diamond 9801/9802, DTK2000, eMachines m6800 laptop, Ennyah DKB-1008, Everex STEPnote, FL90, Fujitsu-Siemens Amilo laptop, Generic 102-key PC, Generic 104-key PC with L-shaped Enter key, Generic 105-key PC, Generic 86-key PC, Genius Comfy KB-12e, Genius Comfy KB-16M/Multimedia KWD-910, Genius Comfy KB-21e-Scroll, Genius KB-19e NB, Genius KKB-2050HS, Gyration, Happy Hacking, Happy Hacking for Mac, Hewlett-Packard Internet, Hewlett-Packard Mini 110 laptop, Hewlett-Packard NEC SK-2500 Multimedia, Hewlett-Packard nx9020, Hewlett-Packard Omnibook 500, Hewlett-Packard Omnibook 500 FA, Hewlett-Packard Omnibook 6000/6100, Hewlett-Packard Omnibook XE3 GC, Hewlett-Packard Omnibook XE3 GF, Hewlett-Packard Omnibook XT1000, Hewlett-Packard Pavilion dv5, Hewlett-Packard Pavilion ZT1100, Honeywell Euroboard, IBM Rapid Access, IBM Rapid Access II, IBM Space Saver, IBM ThinkPad 560Z/600/600E/A22E, IBM ThinkPad R60/T60/R61/T61, IBM ThinkPad Z60m/Z60t/Z61m/Z61t, Keytronic FlexPro, Kinesis, Logitech, Logitech Access, Logitech Cordless Desktop, Logitech Cordless Desktop (alt.), Logitech Cordless Desktop EX110, Logitech Cordless Desktop iTouch, Logitech Cordless Desktop LX-300, Logitech Cordless Desktop Navigator, Logitech Cordless Desktop Optical, Logitech Cordless Desktop Pro (2nd alt.), Logitech Cordless Freedom/Desktop Navigator, Logitech diNovo, Logitech diNovo Edge, Logitech G15 extra keys via G15daemon, Logitech Internet, Logitech Internet 350, Logitech Internet Navigator, Logitech iTouch, Logitech iTouch Cordless Y-RB6, Logitech iTouch Internet Navigator SE, Logitech iTouch Internet Navigator SE USB, Logitech Ultra-X, Logitech Ultra-X Cordless Media Desktop, MacBook/MacBook Pro, MacBook/MacBook Pro (intl.), Macintosh, Macintosh Old, Memorex MX1998, Memorex MX2500 EZ-Access, Memorex MX2750, Microsoft Comfort Curve 2000, Microsoft Internet, Microsoft Internet Pro (Swedish), Microsoft Natural, Microsoft Natural Elite, Microsoft Natural Ergonomic 4000, Microsoft Natural Pro OEM, Microsoft Natural Pro/Internet Pro, Microsoft Natural Pro USB/Internet Pro, Microsoft Natural Wireless Ergonomic 7000, Microsoft Office Keyboard, Microsoft Surface, Microsoft Wireless Multimedia 1.0A, NEC SK-1300, NEC SK-2500, NEC SK-6200, NEC SK-7100, Northgate OmniKey 101, OLPC, Ortek Multimedia/Internet MCK-800, PC-98, Propeller Voyager KTEZ-1000, QTronix Scorpius 98N+, Samsung SDM 4500P, Samsung SDM 4510P, Sanwa Supply SKB-KG3, Silvercrest Multimedia Wireless, SteelSeries Apex 300 (Apex RAW), Sun Type 4, Sun Type 5, Sun Type 6 (Japanese), Sun Type 6/7 USB, Sun Type 6/7 USB (European), Sun Type 6 USB (Japanese), Sun Type 6 USB (Unix), Sun Type 7 USB, Sun Type 7 USB (European), Sun Type 7 USB (Japanese)/Japanese 106-key, Sun Type 7 USB (Unix), Super Power Multimedia, SVEN Ergonomic 2500, SVEN Slim 303, Symplon PaceBook tablet, Targa Visionary 811, Toshiba Satellite S3000, Truly Ergonomic 227, Truly Ergonomic 229, Trust Direct Access, Trust Slimline, Trust Wireless Classic, TypeMatrix EZ-Reach 2020, TypeMatrix EZ-Reach 2030 PS2, TypeMatrix EZ-Reach 2030 USB, TypeMatrix EZ-Reach 2030 USB (102/105:EU mode), TypeMatrix EZ-Reach 2030 USB (106:JP mode), Unitek KB-1925, Vanlig 101-tasters PC, Vanlig 104-tasters PC, ViewSonic KU-306 Internet, Winbook Model XP5, Yahoo! Internet
+d-i	keyboard-configuration/model	select	Generic 105-key PC
+keyboard-configuration	keyboard-configuration/model	select	Generic 105-key PC
+# for internal use
+d-i	keyboard-configuration/modelcode	string	pc105
+keyboard-configuration	keyboard-configuration/modelcode	string	pc105
+# for internal use
+d-i	keyboard-configuration/optionscode	string	
+keyboard-configuration	keyboard-configuration/optionscode	string	
+# for internal use
+d-i	keyboard-configuration/store_defaults_in_debconf_db	boolean	true
+keyboard-configuration	keyboard-configuration/store_defaults_in_debconf_db	boolean	true
+# Metode for å skifte midlertidig mellom nasjonal- og Latin-modus:
+# Choices: Ingen midlertidig skifting, Begge Logo-tastene, Høyre Alt (AltGr), Høyre logotast, Venstre Alt, Venstre logotast
+d-i	keyboard-configuration/switch	select	No temporary switch
+keyboard-configuration	keyboard-configuration/switch	select	No temporary switch
+# Metode for å skifte mellom nasjonal- og Latin-modus:
+# Choices: Caps Lock, Høyre Alt (AltGr), Høyre Ctrl, Høyre Shift, Høyre logotast, Menytast, Alt + Shift, Ctrl + Shift, Ctrl + Alt, Alt + Caps Lock, Venste Ctrl + Venstre Shift, Venstre Alt, Venstre Ctrl, Venstre Shift, Venstre logotast, Scroll Lock tast, Ingen skifting
+d-i	keyboard-configuration/toggle	select	No toggling
+keyboard-configuration	keyboard-configuration/toggle	select	No toggling
+# Behold gjeldende tastaturutforming i konfigurasjonsfilen?
+d-i	keyboard-configuration/unsupported_config_layout	boolean	true
+keyboard-configuration	keyboard-configuration/unsupported_config_layout	boolean	true
+# Behold gjeldende tastaturvalg i konfigurasjonsfilen?
+d-i	keyboard-configuration/unsupported_config_options	boolean	true
+keyboard-configuration	keyboard-configuration/unsupported_config_options	boolean	true
+# Behold standard tastaturutforming ()?
+d-i	keyboard-configuration/unsupported_layout	boolean	true
+keyboard-configuration	keyboard-configuration/unsupported_layout	boolean	true
+# Behold standard tastaturvalg ()?
+d-i	keyboard-configuration/unsupported_options	boolean	true
+keyboard-configuration	keyboard-configuration/unsupported_options	boolean	true
+# Tastaturutforming:
+# Choices: Norwegian, Norwegian - Northern Saami (Norway), Norwegian - Northern Saami (Norway\, no dead keys), Norwegian - Norwegian (Colemak), Norwegian - Norwegian (Dvorak), Norwegian - Norwegian (Macintosh), Norwegian - Norwegian (Macintosh\, no dead keys), Norwegian - Norwegian (no dead keys), Norwegian - Norwegian (Windows), Annet
+d-i	keyboard-configuration/variant	select	Norwegian
+keyboard-configuration	keyboard-configuration/variant	select	Norwegian
+# for internal use
+d-i	keyboard-configuration/variantcode	string	
+keyboard-configuration	keyboard-configuration/variantcode	string	
+# Tasteoppsett som skal brukes:
+# Choices: Engelsk (USA), Albansk, Arabisk, Asturisk, Bangladesh, Hviterussisk, bengali, Belgisk, Tamazight (latinsk alfabet), Bosnisk, Brasiliansk, Engelsk (Storbritannia), Bulgarsk (BDS-oppsett), Bulgarsk (phonetic-oppsett), Burmesisk, Fransk (Canada), Kanadisk\, flerspråklig, Katalansk, Kinesisk, Kroatisk, Tsjekkisk, Dansk, Nederlandsk, Dvorak, dzongkha, Esperanto, Estisk, Etiopisk, Finsk, Fransk, Georgisk, Tysk, Gresk, gujarati, gurmukhi, Hebraisk, hindi, Ungarsk, Islandsk, Irsk, Italiensk, Japansk, kannada, kasakhisk, Khmer, kirgisisk, Koreansk, Kurdisk (F-oppsett), Kurdisk (Q-oppsett), laotisk, Latinamerikansk, Latvisk, Litauisk, Makedonsk, malayalam, nepalsk, Nord-samisk, Norsk, Persisk, Filippinsk, Polsk, Portugisisk, Punjabi, Rumensk, Russisk, Serbisk (kyrillisk), Sindhi, Singalesisk, Slovakisk, Slovensk, Spansk, Svensk, Fransk (Sveits), Tysk (Sveits), Tadsjikisk, Tamilsk, Telugu, Thai, Tibetansk, Tyrkisk (F-oppsett), Tyrkisk (Q-oppsett), Ukrainsk, Uigursk, Vietnamesisk
+d-i	keyboard-configuration/xkb-keymap	select	no
+keyboard-configuration	keyboard-configuration/xkb-keymap	select	no
+# Connect to Debian's debuginfod server to download debug symbols?
+libdebuginfod-common	libdebuginfod/usedebiandebuginfod	boolean	false
+# you are using pam_tally or pam_tally2 in your configuration
+libpam-modules	libpam-modules/deprecate-tally	error	
+# xscreensaver og xlockmore skal genstartes før opgradering
+libpam-modules	libpam-modules/disable-screensaver	error	
+# PAM Profiles with Deprecated Modules Disabled
+libpam-modules	libpam-modules/profiles-disabled	error	
+# Inkompatible PAM-profiler valgt.
+libpam-runtime	libpam-runtime/conflicts	error	
+# Ingen PAM-profiler er blevet valgt.
+libpam-runtime	libpam-runtime/no_profiles_chosen	error	
+# Overskriv lokale ændringer til /etc/pam.d/common-*?
+libpam-runtime	libpam-runtime/override	boolean	false
+# PAM-profiler at aktivere:
+# Choices: Unix authentication, per-user temporary directories, Register user sessions in the systemd control group hierarchy, Create home directory on login, GNOME Keyring Daemon - Login keyring management, umask set at login (Debian Edu version), Group membership granted at login (Debian Edu version)
+libpam-runtime	libpam-runtime/profiles	multiselect	unix, tmpdir, systemd, gnome-keyring, edu-umask, edu-group
+# Der opstod en fejl under genstart af nogle tjenester til PAM-opgradering
+libpam0g:amd64	libpam0g/restart-failed	error	
+# Services to restart for PAM library upgrade:
+libpam0g:amd64	libpam0g/restart-services	string	
+# Visningshåndtering skal genstartes manuelt
+libpam0g:amd64	libpam0g/xdm-needs-restart	error	
+# Systemets standardpapirstørrelse:
+# Choices: letter, a4, note, legal, executive, halfletter, halfexecutive, 11x17, statement, folio, quarto, 10x14, ledger, tabloid, a0, a1, a2, a3, a5, a6, a7, a8, a9, a10, b0, b1, b2, b3, b4, b5, c5, DL, Comm10, Monarch, archE, archD, archC, archB, archA, flsa, flse, csheet, dsheet, esheet
+libpaper1	libpaper/defaultpaper	select	a4
+libpaper1:amd64	libpaper/defaultpaper	select	a4
+# Genstart tjenester under pakkeopgradering uden at spørge?
+libc6	libraries/restart-without-asking	boolean	false
+libc6:amd64	libraries/restart-without-asking	boolean	false
+libpam0g:amd64	libraries/restart-without-asking	boolean	false
+# Afbryd kernefjernelse?
+linux-base	linux-base/removing-running-kernel	boolean	true
+# Standardlokale for systemmiljøet:
+# Choices: Ingen, C.UTF-8, 
+locales	locales/default_environment_locale	select	None
+# Lokaler (stedstilpasninger) som skal opprettes:
+# Choices: Alle lokaler, aa_DJ.UTF-8 UTF-8, aa_ER UTF-8, aa_ER@saaho UTF-8, aa_ET UTF-8, af_ZA.UTF-8 UTF-8, agr_PE UTF-8, ak_GH UTF-8, am_ET UTF-8, an_ES.UTF-8 UTF-8, anp_IN UTF-8, ar_AE.UTF-8 UTF-8, ar_BH.UTF-8 UTF-8, ar_DZ.UTF-8 UTF-8, ar_EG.UTF-8 UTF-8, ar_IN UTF-8, ar_IQ.UTF-8 UTF-8, ar_JO.UTF-8 UTF-8, ar_KW.UTF-8 UTF-8, ar_LB.UTF-8 UTF-8, ar_LY.UTF-8 UTF-8, ar_MA.UTF-8 UTF-8, ar_OM.UTF-8 UTF-8, ar_QA.UTF-8 UTF-8, ar_SA.UTF-8 UTF-8, ar_SD.UTF-8 UTF-8, ar_SS UTF-8, ar_SY.UTF-8 UTF-8, ar_TN.UTF-8 UTF-8, ar_YE.UTF-8 UTF-8, as_IN UTF-8, ast_ES.UTF-8 UTF-8, ayc_PE UTF-8, az_AZ UTF-8, az_IR UTF-8, be_BY.UTF-8 UTF-8, be_BY@latin UTF-8, bem_ZM UTF-8, ber_DZ UTF-8, ber_MA UTF-8, bg_BG.UTF-8 UTF-8, bhb_IN.UTF-8 UTF-8, bho_IN UTF-8, bho_NP UTF-8, bi_VU UTF-8, bn_BD UTF-8, bn_IN UTF-8, bo_CN UTF-8, bo_IN UTF-8, br_FR.UTF-8 UTF-8, brx_IN UTF-8, bs_BA.UTF-8 UTF-8, byn_ER UTF-8, ca_AD.UTF-8 UTF-8, ca_ES.UTF-8 UTF-8, ca_ES@valencia UTF-8, ca_FR.UTF-8 UTF-8, ca_IT.UTF-8 UTF-8, ce_RU UTF-8, chr_US UTF-8, ckb_IQ UTF-8, cmn_TW UTF-8, crh_UA UTF-8, cs_CZ.UTF-8 UTF-8, csb_PL UTF-8, cv_RU UTF-8, cy_GB.UTF-8 UTF-8, da_DK.UTF-8 UTF-8, de_AT.UTF-8 UTF-8, de_BE.UTF-8 UTF-8, de_CH.UTF-8 UTF-8, de_DE.UTF-8 UTF-8, de_IT.UTF-8 UTF-8, de_LI.UTF-8 UTF-8, de_LU.UTF-8 UTF-8, doi_IN UTF-8, dsb_DE UTF-8, dv_MV UTF-8, dz_BT UTF-8, el_CY.UTF-8 UTF-8, el_GR.UTF-8 UTF-8, en_AG UTF-8, en_AU.UTF-8 UTF-8, en_BW.UTF-8 UTF-8, en_CA.UTF-8 UTF-8, en_DK.UTF-8 UTF-8, en_GB.UTF-8 UTF-8, en_HK.UTF-8 UTF-8, en_IE.UTF-8 UTF-8, en_IL UTF-8, en_IN UTF-8, en_NG UTF-8, en_NZ.UTF-8 UTF-8, en_PH.UTF-8 UTF-8, en_SC.UTF-8 UTF-8, en_SG.UTF-8 UTF-8, en_US.UTF-8 UTF-8, en_ZA.UTF-8 UTF-8, en_ZM UTF-8, en_ZW.UTF-8 UTF-8, eo UTF-8, es_AR.UTF-8 UTF-8, es_BO.UTF-8 UTF-8, es_CL.UTF-8 UTF-8, es_CO.UTF-8 UTF-8, es_CR.UTF-8 UTF-8, es_CU UTF-8, es_DO.UTF-8 UTF-8, es_EC.UTF-8 UTF-8, es_ES.UTF-8 UTF-8, es_GT.UTF-8 UTF-8, es_HN.UTF-8 UTF-8, es_MX.UTF-8 UTF-8, es_NI.UTF-8 UTF-8, es_PA.UTF-8 UTF-8, es_PE.UTF-8 UTF-8, es_PR.UTF-8 UTF-8, es_PY.UTF-8 UTF-8, es_SV.UTF-8 UTF-8, es_US.UTF-8 UTF-8, es_UY.UTF-8 UTF-8, es_VE.UTF-8 UTF-8, et_EE.UTF-8 UTF-8, eu_ES.UTF-8 UTF-8, eu_FR.UTF-8 UTF-8, fa_IR UTF-8, ff_SN UTF-8, fi_FI.UTF-8 UTF-8, fil_PH UTF-8, fo_FO.UTF-8 UTF-8, fr_BE.UTF-8 UTF-8, fr_CA.UTF-8 UTF-8, fr_CH.UTF-8 UTF-8, fr_FR.UTF-8 UTF-8, fr_LU.UTF-8 UTF-8, fur_IT UTF-8, fy_DE UTF-8, fy_NL UTF-8, ga_IE.UTF-8 UTF-8, gd_GB.UTF-8 UTF-8, gez_ER UTF-8, gez_ER@abegede UTF-8, gez_ET UTF-8, gez_ET@abegede UTF-8, gl_ES.UTF-8 UTF-8, gu_IN UTF-8, gv_GB.UTF-8 UTF-8, ha_NG UTF-8, hak_TW UTF-8, he_IL.UTF-8 UTF-8, hi_IN UTF-8, hif_FJ UTF-8, hne_IN UTF-8, hr_HR.UTF-8 UTF-8, hsb_DE.UTF-8 UTF-8, ht_HT UTF-8, hu_HU.UTF-8 UTF-8, hy_AM UTF-8, ia_FR UTF-8, id_ID.UTF-8 UTF-8, ig_NG UTF-8, ik_CA UTF-8, is_IS.UTF-8 UTF-8, it_CH.UTF-8 UTF-8, it_IT.UTF-8 UTF-8, iu_CA UTF-8, ja_JP.UTF-8 UTF-8, ka_GE.UTF-8 UTF-8, kab_DZ UTF-8, kk_KZ.UTF-8 UTF-8, kl_GL.UTF-8 UTF-8, km_KH UTF-8, kn_IN UTF-8, ko_KR.UTF-8 UTF-8, kok_IN UTF-8, ks_IN UTF-8, ks_IN@devanagari UTF-8, ku_TR.UTF-8 UTF-8, kw_GB.UTF-8 UTF-8, ky_KG UTF-8, lb_LU UTF-8, lg_UG.UTF-8 UTF-8, li_BE UTF-8, li_NL UTF-8, lij_IT UTF-8, ln_CD UTF-8, lo_LA UTF-8, lt_LT.UTF-8 UTF-8, lv_LV.UTF-8 UTF-8, lzh_TW UTF-8, mag_IN UTF-8, mai_IN UTF-8, mai_NP UTF-8, mfe_MU UTF-8, mg_MG.UTF-8 UTF-8, mhr_RU UTF-8, mi_NZ.UTF-8 UTF-8, miq_NI UTF-8, mjw_IN UTF-8, mk_MK.UTF-8 UTF-8, ml_IN UTF-8, mn_MN UTF-8, mni_IN UTF-8, mnw_MM UTF-8, mr_IN UTF-8, ms_MY.UTF-8 UTF-8, mt_MT.UTF-8 UTF-8, my_MM UTF-8, nan_TW UTF-8, nan_TW@latin UTF-8, nb_NO.UTF-8 UTF-8, nds_DE UTF-8, nds_NL UTF-8, ne_NP UTF-8, nhn_MX UTF-8, niu_NU UTF-8, niu_NZ UTF-8, nl_AW UTF-8, nl_BE.UTF-8 UTF-8, nl_NL.UTF-8 UTF-8, nn_NO.UTF-8 UTF-8, nr_ZA UTF-8, nso_ZA UTF-8, oc_FR.UTF-8 UTF-8, om_ET UTF-8, om_KE.UTF-8 UTF-8, or_IN UTF-8, os_RU UTF-8, pa_IN UTF-8, pa_PK UTF-8, pap_AW UTF-8, pap_CW UTF-8, pl_PL.UTF-8 UTF-8, ps_AF UTF-8, pt_BR.UTF-8 UTF-8, pt_PT.UTF-8 UTF-8, quz_PE UTF-8, raj_IN UTF-8, rif_MA UTF-8, ro_RO.UTF-8 UTF-8, ru_RU.UTF-8 UTF-8, ru_UA.UTF-8 UTF-8, rw_RW UTF-8, sa_IN UTF-8, sah_RU UTF-8, sat_IN UTF-8, sc_IT UTF-8, sd_IN UTF-8, sd_IN@devanagari UTF-8, se_NO UTF-8, sgs_LT UTF-8, shn_MM UTF-8, shs_CA UTF-8, si_LK UTF-8, sid_ET UTF-8, sk_SK.UTF-8 UTF-8, sl_SI.UTF-8 UTF-8, sm_WS UTF-8, so_DJ.UTF-8 UTF-8, so_ET UTF-8, so_KE.UTF-8 UTF-8, so_SO.UTF-8 UTF-8, sq_AL.UTF-8 UTF-8, sq_MK UTF-8, sr_ME UTF-8, sr_RS UTF-8, sr_RS@latin UTF-8, ss_ZA UTF-8, st_ZA.UTF-8 UTF-8, sv_FI.UTF-8 UTF-8, sv_SE.UTF-8 UTF-8, sw_KE UTF-8, sw_TZ UTF-8, syr UTF-8, szl_PL UTF-8, ta_IN UTF-8, ta_LK UTF-8, tcy_IN.UTF-8 UTF-8, te_IN UTF-8, tg_TJ.UTF-8 UTF-8, th_TH.UTF-8 UTF-8, the_NP UTF-8, ti_ER UTF-8, ti_ET UTF-8, tig_ER UTF-8, tk_TM UTF-8, tl_PH.UTF-8 UTF-8, tn_ZA UTF-8, to_TO UTF-8, tpi_PG UTF-8, tr_CY.UTF-8 UTF-8, tr_TR.UTF-8 UTF-8, ts_ZA UTF-8, tt_RU UTF-8, tt_RU@iqtelif UTF-8, ug_CN UTF-8, uk_UA.UTF-8 UTF-8, unm_US UTF-8, ur_IN UTF-8, ur_PK UTF-8, uz_UZ.UTF-8 UTF-8, uz_UZ@cyrillic UTF-8, ve_ZA UTF-8, vi_VN UTF-8, wa_BE.UTF-8 UTF-8, wae_CH UTF-8, wal_ET UTF-8, wo_SN UTF-8, xh_ZA.UTF-8 UTF-8, yi_US.UTF-8 UTF-8, yo_NG UTF-8, yue_HK UTF-8, yuw_PG UTF-8, zh_CN.UTF-8 UTF-8, zh_HK.UTF-8 UTF-8, zh_SG.UTF-8 UTF-8, zh_TW.UTF-8 UTF-8, zu_ZA.UTF-8 UTF-8
+locales	locales/locales_to_be_generated	multiselect	
+# Alternative navne:
+ssl-cert	make-ssl-cert/altname	string	
+# Værtsnavn:
+ssl-cert	make-ssl-cert/hostname	string	localhost
+# Lokale SSL-certifikater skal erstattes
+ssl-cert	make-ssl-cert/vulnerable_prng	note	
+# for internal use; can be preseeded
+man-db	man-db/auto-update	boolean	true
+# Skal man og mandb installeres 'setuid man'?
+man-db	man-db/install-setuid	boolean	false
+# Dummy template
+choose-mirror-bin	mirror/http/directory	string	/debian/
+# Dummy template
+choose-mirror-bin	mirror/http/hostname	string	deb.debian.org
+# Dummy template
+netcfg	netcfg/get_domain	string	intern
+# Dummy template
+netcfg	netcfg/get_hostname	string	localhost
+# Allow password authentication?
+openssh-server	openssh-server/password-authentication	boolean	true
+# Deaktiver SSH-adgangskodegodkendelse for root?
+openssh-server	openssh-server/permit-root-login	boolean	true
+# Dummy template
+partman-lvm	partman-lvm/confirm	boolean	true
+# Dummy template
+partman-lvm	partman-lvm/confirm_nooverwrite	boolean	true
+# Dummy template
+partman-lvm	partman-lvm/device_remove_lvm	boolean	true
+# Dummy template
+partman	partman/confirm	boolean	true
+# Dummy template
+partman	partman/confirm_nooverwrite	boolean	true
+# Dummy template
+partman	partman/confirm_write_new_label	boolean	true
+# Dummy template
+passwd	passwd/make-user	boolean	true
+# Dummy template
+passwd	passwd/md5	boolean	true
+# Dummy template
+passwd	passwd/root-login	boolean	true
+# Dummy template
+passwd	passwd/shadow	boolean	true
+# Dummy template
+passwd	passwd/user-default-groups	string	sudo
+# Brukernavnet for kontoen din:
+user-setup-udeb	passwd/username	string	ukraina
+# Missing back-end for Phonon4Qt5
+phonon4qt5	phonon4qt5-backend-null/isnt_functional	note	
+phonon4qt5:amd64	phonon4qt5-backend-null/isnt_functional	note	
+# Genstart anbefales
+resolvconf	resolvconf/downup-interfaces	note	
+# Tilføj oprindelig fil til dynamisk fil?
+resolvconf	resolvconf/link-tail-to-original	boolean	false
+# Forbered /etc/resolv.conf for dynamiske opdateringer?
+resolvconf	resolvconf/linkify-resolvconf	boolean	true
+# Genstart anbefales
+resolvconf	resolvconf/reboot-recommended-after-removal	note	
+# Skal smb.conf endres til å bruke WINS-innstillinger fra DHCP?
+samba-common	samba-common/dhcp	boolean	false
+# Sette opp smb.conf automatisk?
+samba-common	samba-common/do_debconf	boolean	true
+# Arbeidsgruppe/domenenavn:
+samba-common	samba-common/workgroup	string	skolelinux
+# Aktiver saned som en enkeltstående server?
+sane-utils	sane-utils/saned_run	boolean	false
+# Tilføj sanedbruger til skannergruppen?
+sane-utils	sane-utils/saned_scanner_group	boolean	true
+# for internal use only
+sddm	sddm/daemon_name	string	/usr/bin/sddm
+# Standard for logindhåndtering:
+# Choices: sddm
+sddm	shared/default-x-display-manager	select	sddm
+# Dette kan forhåndsutfulles for å overstyre forvalgt skrivebordsomgivelse.
+tasksel	tasksel/desktop	string	kde
+# Velg hvilke programmer du vil installere:
+# Choices: Debian Edu common desktop applications, Debian Edu LTSP server packages, Debian Edu main server packages, Debian Edu additional packages for networked systems, Debian Edu common packages for networked systems, Debian Edu roaming workstation packages, Debian Edu standalone workstation packages, Debian Edu LTSP thin client packages, Debian Edu networked workstation packages, Debian desktop environment, ... GNOME, ... Xfce, ... GNOME Flashback, ... KDE Plasma, ... Cinnamon, ... MATE, ... LXDE, ... LXQt, web server, SSH server, standard systemverktøy, Hardware specific firmware packages (autodetected by isenkram), Hardware specific packages (autodetected by isenkram)
+tasksel	tasksel/first	multiselect	education-standalone, education-desktop-other, ssh-server, standard, isenkram-firmware
+# Velg hvilke programmer du vil installere:
+# Choices: 
+tasksel	tasksel/tasks	multiselect	
+# Installer terminatorX SUID root så programmet kan bruge realtidsplanlægning?
+terminatorx	terminatorx/suid_bin	boolean	false
+# TeX-binære filer som bør bruge systempapirstørrelsen:
+# Choices: pdftex, dvips, dvipdfmx, xdvi
+texlive-base	texlive-base/binary_chooser	multiselect	pdftex, dvips, dvipdfmx, xdvi
+# Uhåndterbar systempapirstørrelse ()
+texlive-base	texlive-base/texconfig_ignorant	error	
+# Geografisk område:
+# Choices: Afrika, Amerika, Antarktis, Arktis, Asien, Atlanterhavstid, Australien, Europa, Indisk, Stillehavstid, US, Etc
+tzdata	tzdata/Areas	select	Etc
+# Tidszone:
+# Choices: Abidjan, Accra, Addis Ababa, Algier, Asmara, Bamako, Bangui, Banjul, Bissau, Blantyre, Brazzaville, Bujumbura, Kairo, Casablanca, Ceuta, Conakry, Dakar, Dar es Salaam, Djibouti, Douala, Laayoune, Freetown, Gaborone, Harare, Johannesburg, Juba, Kampala, Khartoum, Kigali, Kinshasa, Lagos, Libreville, Lome, Luanda, Lubumbashi, Lusaka, Malabo, Maputo, Maseru, Mbabane, Mogadishu, Monrovia, Nairobi, Ndjamena, Niamey, Nouakchott, Ouagadougou, Porto-Novo, Sao Tome, Timbuktu, Tripoli, Tunis, Windhoek
+tzdata	tzdata/Zones/Africa	select	
+# Tidszone:
+# Choices: Adak, Anchorage, Anguilla, Antigua, Araguaina, Argentina/Buenos Aires, Argentina/Catamarca, Argentina/Cordoba, Argentina/Jujuy, Argentina/La Rioja, Argentina/Mendoza, Argentina/Rio Gallegos, Argentina/Salta, Argentina/San Juan, Argentina/San Luis, Argentina/Tucuman, Argentina/Ushuaia, Aruba, Asuncion, Atikokan, Atka, Bahia, Bahia Banderas, Barbados, Belem, Belize, Blanc-Sablon, Boa Vista, Bogota, Boise, Cambridge Bay, Campo Grande, Cancun, Caracas, Cayenne, Cayman, Chicago, Chihuahua, Ciudad_Juarez, Coral Harbour, Costa Rica, Creston, Cuiaba, Curacao, Danmarkshavn, Dawson, Dawson Creek, Denver, Detroit, Dominica, Edmonton, Eirunepe, El Salvador, Ensenada, Fort Nelson, Fortaleza, Glace Bay, Godthåb, Goose Bay, Gran Turk, Grenada, Guadeloupe, Guatemala, Guayaquil, Guyana, Halifax, Havana, Hermosillo, Indiana/Indianapolis, Indiana/Knox, Indiana/Marengo, Indiana/Petersburg, Indiana/Tell City, Indiana/Vevay, Indiana/Vincennes, Indiana/Winamac, Inuvik, Iqaluit, Jamaica, Juneau, Kentucky/Louisville, Kentucky/Monticello, Kralendijk, La Paz, Lima, Los Angeles, Lower Princes, Maceio, Managua, Manaus, Marigot, Martinique, Matamoros, Mazatlan, Menominee, Merida, Metlakatla, Mexico City, Miquelon, Moncton, Monterrey, Montevideo, Montreal, Montserrat, Nassau, New York, Nipigon, Nome, Noronha, North Dakota/Beulah, North Dakota/Center, North Dakota/New Salem, Nuuk, Ojinaga, Panama, Pangnirtung, Paramaribo, Phoenix, Port-au-Prince, Port of Spain, Porto Acre, Porto Velho, Puerto Rico, Punta Arenas, Rainy River, Rankin Inlet, Recife, Regina, Resolute, Rio Branco, Santa Isabel, Santarem, Santiago, Santo Domingo, Sao Paulo, Scoresbysund, Shiprock, Sitka, Sankt Barthelemy, Sankt Johns, Sankt Kitts, Sankt Lucia, Sankt Thomas, Sankt Vincent, Swift Current, Tegucigalpa, Thule, Tordenbugten, Tijuana, Toronto, Tortola, Vancouver, Virgin, Whitehorse, Winnipeg, Yakutat, Yellowknife
+tzdata	tzdata/Zones/America	select	
+# Tidszone:
+# Choices: Casey, Davis, DumontDUrville, Macquarie, Mawson, McMurdo, Palmer, Rothera, Syowa, Troll, Vostok
+tzdata	tzdata/Zones/Antarctica	select	
+# Tidszone:
+# Choices: Longyearbyen
+tzdata	tzdata/Zones/Arctic	select	
+# Tidszone:
+# Choices: Aden, Almaty, Amman, Anadyr, Aqtau, Aqtobe, Ashgabat, Atyrau, Baghdad, Bahrain, Baku, Bangkok, Barnaul, Beirut, Bishkek, Brunei, Chita, Choibalsan, Chongqing, Colombo, Damascus, Dhaka, Dili, Dubai, Dushanbe, Famagusta, Gaza, Harbin, Hebron, Ho Chi Minh, Hong Kong, Hovd, Irkutsk, Istanbul, Jakarta, Jayapura, Jerusalem, Kabul, Kamchatka, Karachi, Kashgar, Kathmandu, Khandyga, Kolkata, Krasnoyarsk, Kuala Lumpur, Kuching, Kuwait, Macau, Magadan, Makassar, Manila, Muscat, Nicosia, Novokuznetsk, Novosibirsk, Omsk, Oral, Phnom Penh, Pontianak, Pyongyang, Qatar, Qostanay, Qyzylorda, Riyadh, Sakhalin, Samarkand, Seoul, Shanghai, Singapore, Srednekolymsk, Taipei, Tashkent, Tbilisi, Tehran, Tel Aviv, Thimphu, Tokyo, Tomsk, Ulaanbaatar, Urumqi, Ust-Nera, Vientiane, Vladivostok, Jakutsk, Yangon, Yekaterinburg, Yerevan
+tzdata	tzdata/Zones/Asia	select	
+# Tidszone:
+# Choices: Azores, Bermuda, Canary, Cape Verde, Faroe, Jan Mayen, Madeira, Reykjavik, South Georgia, Sankt Helena, Stanley
+tzdata	tzdata/Zones/Atlantic	select	
+# Tidszone:
+# Choices: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+tzdata	tzdata/Zones/Australia	select	
+# Tidszone:
+# Choices: GMT, GMT0, GMT+0, GMT+1, GMT+2, GMT+3, GMT+4, GMT+5, GMT+6, GMT+7, GMT+8, GMT+9, GMT+10, GMT+11, GMT+12, GMT-0, GMT-1, GMT-2, GMT-3, GMT-4, GMT-5, GMT-6, GMT-7, GMT-8, GMT-9, GMT-10, GMT-11, GMT-12, GMT-13, GMT-14, Greenwich, UCT, UTC, Universal, Zulu
+tzdata	tzdata/Zones/Etc	select	UTC
+# Tidszone:
+# Choices: Amsterdam, Andorra, Astrakhan, Athen, Belfast, Beograd, Berlin, Bratislava, Bruxelles, Bukarest, Budapest, Busingen, Chisinau, København, Dublin, Gibraltar, Guernsey, Helsinki, Isle of Man, Istanbul, Jersey, Kaliningrad, Kirov, Kiev, Lissabon, Ljubljana, London, Luxembourg, Madrid, Malta, Mariehamn, Minsk, Monaco, Moskva, Nicosia, Oslo, Paris, Podgorica, Prag, Riga, Rom, Samara, San Marino, Sarajevo, Saratov, Simferopol, Skopje, Sofia, Stockholm, Tallinn, Tirana, Tiraspol, Ulyanovsk, Vaduz, Vatikanet, Wien, Vilnius, Volgograd, Warszawa, Zagreb, Zurich
+tzdata	tzdata/Zones/Europe	select	
+# Tidszone:
+# Choices: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldiverne, Mauritius, Mayotte, Reunion
+tzdata	tzdata/Zones/Indian	select	
+# Tidszone:
+# Choices: Apia, Auckland, Bougainville, Chatham, Chuuk, Easter, Efate, Fakaofo, Fiji, Funafuti, Galapagos, Gambier, Guadalcanal, Guam, Honolulu, Johnston, Kanton, Kiritimati, Kosrae, Kwajalein, Majuro, Marquesas, Midway, Nauru, Niue, Norfolk, Noumea, Pago Pago, Palau, Pitcairn, Pohnpei, Port Moresby, Rarotonga, Saipan, Samoa, Tahiti, Tarawa, Tongatapu, Wake, Wallis, Yap
+tzdata	tzdata/Zones/Pacific	select	
+# Tidszone:
+# Choices: Alaska, Aleutian, Arizona, Central, Østlig, Hawaii, Indiana-Starke, Michigan, Mountain, Stillehavstid, Samoa
+tzdata	tzdata/Zones/US	select	
+# Hvad vil du gøre med ændret opsætningsfil ?
+# Choices: installer pakkevedligeholderens udgave, bevar din aktuelt installerede udgave, vis forskellene mellem udgaverne, vis forskellene mellem versionerne overfor hinanden, start en ny skal for at undersøge situationen
+ucf	ucf/changeprompt	select	keep_current
+# Hvad vil du gøre med ændret opsætningsfil ?
+# Choices: installer pakkevedligeholderens udgave, bevar din aktuelt installerede udgave, vis forskellene mellem udgaverne, vis forskellene mellem versionerne overfor hinanden, vis 3-vejs forskelle mellem de tilgængelige udgaver af filen, lav 3-vejs forskelle mellem de tilgængelige udgaver af filen, start en ny skal for at undersøge situationen
+ucf	ucf/changeprompt_threeway	select	keep_current
+# Konflikter fundet i trevejssammenføjning
+ucf	ucf/conflicts_found	error	
+# vis forskellene mellem udgaverne
+ucf	ucf/show_diff	note	
+# Dummy template
+unattended-upgrades	unattended-upgrades/enable_auto_updates	boolean	false
+# Deaktiver inetd-punkter?
+update-inetd	update-inetd/ask-disable-entries	boolean	false
+# Forlad eksisterende punkt og fortsæt uden ændringer?
+update-inetd	update-inetd/ask-entry-present	boolean	true
+# Fjern inetd-punkter?
+update-inetd	update-inetd/ask-remove-entries	boolean	false
+# Ignorerer flere punkter og fortsæt uden ændringer?
+update-inetd	update-inetd/ask-several-entries	boolean	true
+# Dummy template
+uswsusp	uswsusp/encrypt	boolean	false
+# Norsk språkvariant:
+# Choices: nynorsk, bokmål
+wnorwegian	wnorwegian/whichvariant	select	bokmaal
+# for internal use
+xserver-xorg-legacy	xserver-xorg-legacy/xwrapper/actual_allowed_users	string	console
+# Brukere som har lov til å starte X-tjeneren:
+# Choices: Bare root, Bare konsoll-brukere, Alle
+xserver-xorg-legacy	xserver-xorg-legacy/xwrapper/allowed_users	select	Console Users Only
