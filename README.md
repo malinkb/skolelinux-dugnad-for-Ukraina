@@ -4,6 +4,8 @@ Depot for skript, etc som vil gjøre installasjon av brukte bærbare datamaskine
 
 Formål med preseeden er å gjøre det raskere å installere uten at man må svare på mange spørsmål
 
+Preseed-mulighetene i Debian er beskrevet i https://www.debian.org/releases/stable/amd64/apb.en.html .
+
 1) Vi skal ha kde som standard skrivebord
 2) Vi skal ha Frittstående installasjon
 3) Vi skal ha alt installert under /
