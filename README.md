@@ -6,18 +6,19 @@ Formål med preseeden er å gjøre det raskere å installere uten at man må sva
 
 Preseed-mulighetene i Debian er beskrevet i https://www.debian.org/releases/stable/amd64/apb.en.html .
 
-1) Vi skal ha kde som standard skrivebord
-2) Vi skal ha Frittstående installasjon
-3) Vi skal ha alt installert under /
-4) Vi vil ha vekk lvm og kjøre alt "rett på jernet"
-5) Vi skal bruke dette speilet: http://deb.debian.org/debian
-6) Vi skal ha med main non-free-firmware contrib non-free
-7) pakken firmware-b43-installer må med (denne burde vel egentlig vært i
+1) DONE: Vi skal ha kde som standard skrivebord
+2) DONE: Vi skal ha Frittstående installasjon
+3) ToDo: Vi skal ha alt installert under /
+4) ToDo: Vi vil ha vekk lvm og kjøre alt "rett på jernet"
+5) DONE: Vi skal bruke dette speilet: http://deb.debian.org/debian
+6) DONE: Vi skal ha med main non-free-firmware contrib non-free
+7) ToDo: pakken firmware-b43-installer må med (denne burde vel egentlig vært i
    non-free-firmware, men er i contrib i dag
-8) pakken task-ukrainian-desktop er med
-9) kiosk-modus må settes opp, slik at maskinen starter rett opp i skrivebord
+8) DONE: pakken task-ukrainian-desktop er med
+9) PARTLY DONE: kiosk-modus må settes opp, slik at maskinen starter rett opp i skrivebord
    uten noe innlogging og at maskinen logger inn igjen om man logger ut
-10) Se https://wiki.nuug.no/skolelinux for detaljer rundt passord
+10) ToDo: oppdatere systemet til nyeste versjon med sudo apt update && sudo apt dist-upgrade -y (eller tilsvarende) før systemet starter opp om mulig
+11) Se https://wiki.nuug.no/skolelinux for detaljer rundt passord
 
 Implementert i preeseed-skolelinux.cfg:
 
