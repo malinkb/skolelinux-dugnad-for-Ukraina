@@ -12,12 +12,11 @@ Preseed-mulighetene i Debian er beskrevet i https://www.debian.org/releases/stab
 4) ToDo: Vi vil ha vekk lvm og kjøre alt "rett på jernet"
 5) DONE: Vi skal bruke dette speilet: http://deb.debian.org/debian
 6) DONE: Vi skal ha med main non-free-firmware contrib non-free
-7) ToDo: pakken firmware-b43-installer må med (denne burde vel egentlig vært i
-   non-free-firmware, men er i contrib i dag
+7) DONE: pakken firmware-b43-installer bør installeres for maskiner som trenger den.
 8) DONE: pakken task-ukrainian-desktop er med
 9) PARTLY DONE: kiosk-modus må settes opp, slik at maskinen starter rett opp i skrivebord
    uten noe innlogging og at maskinen logger inn igjen om man logger ut
-10) ToDo: oppdatere systemet til nyeste versjon med sudo apt update && sudo apt dist-upgrade -y (eller tilsvarende) før systemet starter opp om mulig
+10) DONE: oppdatere systemet til nyeste versjon med sudo apt update && sudo apt dist-upgrade -y (eller tilsvarende) før systemet starter opp om mulig
 11) Se https://wiki.nuug.no/skolelinux for detaljer rundt passord
 
 Implementert i preeseed-skolelinux.cfg:
