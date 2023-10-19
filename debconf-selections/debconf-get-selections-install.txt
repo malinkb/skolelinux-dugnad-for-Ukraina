@@ -1,0 +1,1318 @@
+# Dummy template for preseeding unavailable questions
+d-i	adduser/homedir-permission	string	false
+# Installasjonskomponenter som skal lastes:
+# Choices: choose-mirror: Choose mirror to install from (menu item), crypto-dm-modules-6.1.0-13-amd64-di: devicemapper crypto module, debian-edu-install-udeb: Execute Debian Edu debian-installer profile, debian-edu-profile-udeb: Choose Debian Edu profile, driver-injection-disk-detect: Detect OEM driver injection disks, espeakup-udeb: Configure the speech synthesizer voice, event-modules-6.1.0-13-amd64-di: Event support, f2fs-modules-6.1.0-13-amd64-di: f2fs filesystem support, fdisk-udeb: Manually partition a hard drive (fdisk), fuse-modules-6.1.0-13-amd64-di: FUSE modules, load-media: Load installer components from removable media, lowmem: free memory for lowmem install, mbr-udeb: Master Boot Record for IBM-PC compatible computers, multipath-modules-6.1.0-13-amd64-di: Multipath support, nbd-modules-6.1.0-13-amd64-di: Network Block Device modules, network-console: Continue installation remotely using SSH, openssh-client-udeb: secure shell client for the Debian installer, parted-udeb: Manually partition a hard drive (parted), ppp-modules-6.1.0-13-amd64-di: PPP drivers, ppp-udeb: Point-to-Point Protocol (PPP) - package for Debian Installer, reiserfsprogs-udeb: User-level tools for ReiserFS filesystems, rescue-mode: mount requested partition and start a rescue shell, scsi-nic-modules-6.1.0-13-amd64-di: SCSI drivers for converged NICs, sound-modules-6.1.0-13-amd64-di: sound support, squashfs-modules-6.1.0-13-amd64-di: squashfs modules, udf-modules-6.1.0-13-amd64-di: UDF modules
+d-i	anna/choose_modules	multiselect	debian-edu-install-udeb
+# Installasjonskomponenter som skal lastes:
+# Choices: 
+d-i	anna/choose_modules_lowmem	multiselect	
+# Klarte ikke å laste installasjonskomponenten
+d-i	anna/install_failed	error	
+# Vil du fortsette installasjonen uten å laste inn kjernemoduler?
+d-i	anna/no_kernel_modules	boolean	false
+# for internal use only
+d-i	anna/retriever	string	cdrom-retriever
+# for internal use; can be preseeded
+d-i	anna/standard_modules	boolean	true
+# problem med apt-oppsettet
+apt-cdrom-setup	apt-setup/cdrom/failed	error	
+# Søke etter ekstra installasjonsmedie?
+apt-cdrom-setup	apt-setup/cdrom/set-double	boolean	true
+# Søke etter ekstra installasjonsmedie?
+apt-cdrom-setup	apt-setup/cdrom/set-failed	boolean	true
+# Søke etter ekstra installasjonsmedie?
+apt-cdrom-setup	apt-setup/cdrom/set-first	boolean	false
+# Søke etter ekstra installasjonsmedie?
+apt-cdrom-setup	apt-setup/cdrom/set-next	boolean	false
+# Vil du bruke tilleggsprogrammer?
+apt-mirror-setup	apt-setup/contrib	boolean	true
+# for internal use; can be preseeded
+apt-cdrom-setup	apt-setup/disable-cdrom-entries	boolean	false
+# Aktiver kildearkiv i APT?
+apt-setup-udeb	apt-setup/enable-source-repositories	boolean	true
+# Klarte ikke å laste ned nøkkel for lokalt arkiv:
+# Choices: Prøv igjen, Ignorer
+apt-setup-udeb	apt-setup/local/key-error	select	Retry
+# Klarte ikke å laste ned fila:
+# Choices: Prøv igjen, Bytt speil, Ignorer
+apt-mirror-setup	apt-setup/mirror/error	select	Retry
+# for internal use; can be preseeded
+apt-setup-udeb	apt-setup/multiarch	string	
+# Vil du fortsett uten en nettverksspeil?
+apt-mirror-setup	apt-setup/no_mirror	boolean	false
+# Vil du bruke ufri programvare?
+apt-mirror-setup	apt-setup/non-free	boolean	true
+# Vil du bruke ufri fastvare?
+apt-mirror-setup	apt-setup/non-free-firmware	boolean	true
+# for internal use; can be preseeded
+apt-setup-udeb	apt-setup/security_host	string	
+# Fikk ikke tilgang til arkiv
+apt-setup-udeb	apt-setup/service-failed	error	
+# Tjenester:
+# Choices: sikkerhetsoppdateringer (fra ), utgivelsesoppdateringer, tilbakeført programvare
+apt-setup-udeb	apt-setup/services-select	multiselect	security, updates
+# Bruk et speil på nettet?
+apt-mirror-setup	apt-setup/use_mirror	boolean	false
+# for internal use; can be preseeded
+network-preseed	auto-install/defaultroot	string	d-i/bookworm/./preseed.cfg
+# for internal use; can be preseeded
+network-preseed	auto-install/enable	boolean	false
+# Klarte ikke å installere grunnsystemet
+bootstrap-base	base-installer/cannot_install	error	
+# Klarte ikke å installere grunnsystemet
+bootstrap-base	base-installer/debootstrap-failed	error	
+# Feil ved installasjonen av grunnsystemet
+bootstrap-base	base-installer/debootstrap/error-abnormal	error	
+# Feil ved installasjonen av grunnsystemet
+bootstrap-base	base-installer/debootstrap/error-exitcode	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/couldntdl	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/invalidrel	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/missingrelentry	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/nogetrel	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/nogetrelsig	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/error/unknownrelsig	error	
+# Feil ved Debootstrap
+bootstrap-base	base-installer/debootstrap/fallback-error	error	
+# Debootstrap-advarsel
+bootstrap-base	base-installer/debootstrap/fallback-warning	error	
+# for internal use; can be preseeded
+bootstrap-base	base-installer/debootstrap_script	string	
+# for internal use; can be preseeded
+bootstrap-base	base-installer/excludes	string	
+# for internal use; can be preseeded
+bootstrap-base	base-installer/includes	string	
+# Drivere som skal inkluderes i initrd:
+# Choices: generisk: inkluder alle tilgjengelige drivere, målrettet: bare inkluder drivere som trengs for dette systemet
+bootstrap-base	base-installer/initramfs-tools/driver-policy	select	most
+# Verktøy for å lage initrd for oppstart:
+# Choices: 
+bootstrap-base	base-installer/initramfs/generator	select	
+# Ustøttet initrd-generator
+bootstrap-base	base-installer/initramfs/unsupported	error	
+# for internal use; can be preseeded
+base-installer	base-installer/install-recommends	boolean	true
+# Klarte ikke å installere den valgte kjernen
+bootstrap-base	base-installer/kernel/failed-install	error	
+# Klarte ikke å installere 
+bootstrap-base	base-installer/kernel/failed-package-install	error	
+# Kjerne som skal installeres:
+# Choices: linux-image-6.1.0-13-amd64,linux-image-amd64, ingen
+bootstrap-base	base-installer/kernel/image	select	linux-image-amd64
+# for internal use; can be preseeded
+bootstrap-base	base-installer/kernel/linux/extra-packages	string	
+# for internal use; can be preseeded
+bootstrap-base	base-installer/kernel/linux/extra-packages-2.6	string	
+# for internal use
+bootstrap-base	base-installer/kernel/linux/initramfs-tools/driver-policy	string	most
+# for internal use only
+bootstrap-base	base-installer/kernel/linux/initrd-2.6	boolean	true
+# for internal use only
+bootstrap-base	base-installer/kernel/linux/link_in_boot	boolean	false
+# Kan ikke installere kjerne
+bootstrap-base	base-installer/kernel/no-kernels-found	error	
+# Vil du fortsette uten å installere en kjerne?
+bootstrap-base	base-installer/kernel/skip-install	boolean	false
+# Feil ved Debootstrap
+bootstrap-base	base-installer/no_codename	error	
+# Intet filsystem er montert på /target
+base-installer	base-installer/no_target_mounted	error	
+# Installerer ikke på et sted som ikke er tomt
+base-installer	base-installer/unclean_target_cancel	error	
+# Vil du fortsette installasjonen på partisjonen selv om det alt finnes en partisjon der?
+base-installer	base-installer/use_unclean_target	boolean	true
+# Sett inn Debian-innstallasjonsmedium
+d-i	cdrom-checker/askmount	note	
+# Sett inn et Debian-oppstartsmedie
+d-i	cdrom-checker/firstcd	note	
+# Klarte ikke å åpne sjekksumfila
+d-i	cdrom-checker/md5file_failed	error	
+# CD-testen mislyktes
+d-i	cdrom-checker/mismatch	error	
+# Klarte ikke å avmontere medium
+d-i	cdrom-checker/mntfailed	error	
+# Vil du teste en annen installasjonsavbildning?
+d-i	cdrom-checker/nextcd	boolean	false
+# Integritetstesten var vellykket
+d-i	cdrom-checker/passed	note	
+# Sjekk installasjonsmediets integritet?
+d-i	cdrom-checker/start	boolean	false
+# Inget gyldig Debian-installasjonsmedium
+d-i	cdrom-checker/wrongcd	error	
+# Enhetsfil for å få tilgang til installasjonsmediet:
+d-i	cdrom-detect/cdrom_device	string	/dev/sr0
+# for internal use only
+d-i	cdrom-detect/cdrom_fs	string	iso9660
+# Modul som trengs for å få tilgang til installasjonsmediet:
+# Choices: 
+d-i	cdrom-detect/cdrom_module	select	none
+# for internal use; can be preseeded
+d-i	cdrom-detect/eject	boolean	true
+# for internal use only
+d-i	cdrom-detect/hybrid	boolean	false
+# Last inn drivere fra flyttbart medium?
+d-i	cdrom-detect/load_media	boolean	true
+# Velg en modul og enhet manuelt for installasjonsmedier?
+d-i	cdrom-detect/manual_config	boolean	true
+# Feil under lesing av Release-fila
+d-i	cdrom-detect/no-release	error	
+# Forsøk montering av installasjonsmedia på nytt?
+d-i	cdrom-detect/retry	boolean	true
+# Oppdaget installasjonsmedie
+d-i	cdrom-detect/success	note	
+# UNetbootin-media oppdaget
+d-i	cdrom-detect/unetbootin_detected	note	
+# for internal use only
+d-i	cdrom-detect/usb-hdd	boolean	false
+# Oppdaget feil installasjonsmedie
+d-i	cdrom-detect/wrong-cd	error	
+# for internal use only
+d-i	cdrom/codename	string	bookworm
+# for internal use only
+# Choices: stable, testing, unstable
+d-i	cdrom/suite	select	stable
+# Vent enda 30 sekunder for at hwclock skal stille klokka?
+clock-setup	clock-setup/hwclock-wait	boolean	false
+# Still klokka ved hjelp av NTP?
+clock-setup	clock-setup/ntp	boolean	true
+# NTP-tjener:
+clock-setup	clock-setup/ntp-server	string	0.debian.pool.ntp.org
+# for internal use only
+clock-setup	clock-setup/system-time-changed	boolean	true
+# Er systemklokka satt til UTC?
+clock-setup	clock-setup/utc	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	cpufrequtils/enable	string	true
+# for internal use only
+d-i	debconf/frontend	string	
+# for internal use only
+d-i	debconf/language	string	nb_NO:nb:no_NO:no:nn_NO:nn:da:sv:en
+# Hopp over spørsmål med lavere prioritet enn:
+# Choices: kritisk, høy, middels, lav
+d-i	debconf/priority	select	critical
+# for internal use only
+d-i	debconf/showold	boolean	false
+# for internal use only
+d-i	debconf/translations-dropped	boolean	false
+# Er du sikker på at du vil bruke det automatiske partisjoneringsverktøyet?
+debian-edu-profile-udeb	debian-edu-install/confirm	boolean	true
+# Tilgjengelig diskplass er for liten.  Avbryt installasjonen?
+debian-edu-profile-udeb	debian-edu-install/disk-too-small	boolean	true
+# Installasjonen av påkrevde pakker feilet
+debian-edu-profile-udeb	debian-edu-install/errors-pkg-installation	error	
+# Mangler påkrevd nettverkstilkobling
+debian-edu-profile-udeb	debian-edu-install/no-network	error	
+# Delta i pakkebrukskartleggingen?
+debian-edu-profile-udeb	debian-edu-install/participate-popcon	boolean	false
+# Profil(er) som skal anvendes på denne maskinen:
+# Choices: Hovedtjener, Arbeidsstasjon, Vandrende arbeidsstasjon, LTSP tjener, Frittstående, Minimal
+debian-edu-profile-udeb	debian-edu-install/profile	multiselect	Standalone
+# for internal use - disable sync when installing packages
+debian-edu-profile-udeb	debian-edu-install/quick-install	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	debian-edu-install/run-firstboot	string	true
+# Frittstående installasjon er delvis manuell
+debian-edu-profile-udeb	debian-edu-install/standalone	note	
+# Profilen «Frittstående» kan ikke brukes sammen med andre profiler
+debian-edu-profile-udeb	debian-edu-install/standalone_only	error	
+# for internal use; can be preseeded
+d-i	debian-installer/add-kernel-opts	string	
+# for internal use; can be preseeded
+d-i	debian-installer/allow_unauthenticated	boolean	false
+# for internal use; can be preseeded
+d-i	debian-installer/allow_unauthenticated_ssl	boolean	false
+# for internal use only
+d-i	debian-installer/consoledisplay	string	console-setup
+# for internal use; can be preseeded
+d-i	debian-installer/country	string	NO
+# Make this ChromeOS board bootable
+depthcharge-tools-installer	debian-installer/depthcharge-tools-installer/title	note	
+# Dummy template for preseeding unavailable questions
+d-i	debian-installer/dummy	string	
+# for internal use only
+d-i	debian-installer/exit/always_halt	boolean	false
+# for internal use; can be preseeded
+d-i	debian-installer/exit/halt	boolean	false
+# for internal use; can be preseeded
+d-i	debian-installer/exit/poweroff	boolean	false
+# for internal use; can be preseeded
+d-i	debian-installer/framebuffer	boolean	true
+# for internal use only
+d-i	debian-installer/language	string	nb_NO:nb:no_NO:no:nn_NO:nn:da:sv:en
+# Systemlokale:
+# Choices: 
+d-i	debian-installer/locale	select	nb_NO.UTF-8
+# Velg neste trinn i installasjonen:
+# Choices: Velg språk/Choose language, Access software for a blind person using a braille display, Sett opp tastaturet, Oppdag og monter installasjonsmedium, Oppdag virtuelle driverdisker fra maskinvareprodusent, Last installasjonskomponenter fra installasjonsmediet, Finn nettverksutstyr, Sett opp nettverket, Velg Debian Edu-profil, Sett opp brukere og passord, Sett opp klokka, Finn disker, Partisjoner harddisker, Installer grunnsystemet, Sett opp pakkebehandleren, Velg og installer programvare, Installer oppstartssystemet GRUB, Fortsett uten oppstartslaster, Installer Debian Edu-profil (i menyrekkefølge), Fullfør installasjonen, Endre debconf-prioritet, Sjekk integritetet til installasjonsmediet, Lagre feilsøkingslogger, Kjør et skall, Løs ut CD fra enheten, Avbryt installasjonen
+d-i	debian-installer/main-menu	select	Fullfør installasjonen
+# Installasjonstrinnet mislyktes
+d-i	debian-installer/main-menu/item-failure	error	
+# Velg et installasjonstrinn:
+# Choices: 
+d-i	debian-installer/missing-provide	select	${DEFAULT}
+# 
+d-i	debian-installer/shell-plugin	terminal	
+# Terminaltillegget er ikke tilgjengelig
+d-i	debian-installer/terminal-plugin-unavailable	error	
+# for internal use; can be preseeded
+d-i	debian-installer/theme	string	
+# for internal use; can be preseeded
+depthcharge-tools-installer	depthcharge-tools-installer/board	string	
+# Cannot build a boot image
+depthcharge-tools-installer	depthcharge-tools-installer/error/build_image	error	
+# No usable ChromeOS kernel partition is found
+depthcharge-tools-installer	depthcharge-tools-installer/error/check_parts	error	
+# Unable to install 
+depthcharge-tools-installer	depthcharge-tools-installer/error/failed-package-install	error	
+# Cannot write boot image to disk
+depthcharge-tools-installer	depthcharge-tools-installer/error/write_image	error	
+# Reconfigure initramfs policies?
+depthcharge-tools-installer	depthcharge-tools-installer/initramfs_too_big	boolean	
+# Making this ChromeOS board bootable
+depthcharge-tools-installer	depthcharge-tools-installer/progress	note	
+# Building a boot image
+depthcharge-tools-installer	depthcharge-tools-installer/progress/build_image	note	
+# Checking ChromeOS kernel partitions
+depthcharge-tools-installer	depthcharge-tools-installer/progress/check_parts	note	
+# Installing tools to manage ChromeOS boot images
+depthcharge-tools-installer	depthcharge-tools-installer/progress/install_tools	note	
+# Updating initramfs
+depthcharge-tools-installer	depthcharge-tools-installer/progress/update_initramfs	note	
+# Writing the boot image to disk
+depthcharge-tools-installer	depthcharge-tools-installer/progress/write_image	note	
+# Er du sikker på at du vil avslutte nå?
+d-i	di-utils-reboot/really_reboot	boolean	false
+# Interaktivt skall
+d-i	di-utils-shell/do-shell	note	
+# Ingen partisjonerbare media
+disk-detect	disk-detect/cannot_find	error	
+# Driver som trengs for din harddisk:
+# Choices: fortsett uten harddisk, , ingen av de ovenfor
+disk-detect	disk-detect/module_select	select	continue with no disk drive
+# for internal use; can be preseeded
+disk-detect	disk-detect/multipath/enable	boolean	false
+# Vil du laste drivere fra intern virtuell driverdisk?
+driver-injection-disk-detect	driver-injection-disk/load	boolean	true
+# Fant intet nettverkskort
+ethdetect	ethdetect/cannot_find	error	
+# Driver som nettverkskortet skal bruke:
+# Choices: intet ethernet-kort, , ingen av de ovenfor
+ethdetect	ethdetect/module_select	select	no ethernet card
+# for internal use; can be preseeded
+ethdetect	ethdetect/prompt_missing_firmware	boolean	true
+# Akter du å bruke Firewire Ethernet?
+ethdetect	ethdetect/use_firewire_ethernet	boolean	false
+# Dummy template for preseeding unavailable questions
+d-i	exim4/dc_eximconfig_configtype	string	local delivery only; not on a network
+# Dummy template for preseeding unavailable questions
+d-i	exim4/dc_postmaster	string	root
+# for internal use; can be preseeded
+finish-install	finish-install/keep-consoles	boolean	false
+# Installasjonen er ferdig
+finish-install	finish-install/reboot_in_progress	note	
+# Klarte ikke installere GRUB
+grub-installer	grub-installer/apt-install-failed	error	
+# Enheten oppstartslasteren skal installeres på:
+grub-installer	grub-installer/bootdev	string	
+# Enheten oppstartslasteren skal installeres på:
+# Choices: Skriv inn enhet manuelt, /dev/vda
+grub-installer	grub-installer/choose_bootdev	select	/dev/vda
+# Kjøre os-prober automatisk for å oppdage og starte opp andre OS?
+grub-installer	grub-installer/enable_os_prober_otheros_no	boolean	false
+# Kjøre os-prober automatisk for å oppdage og starte opp andre OS?
+grub-installer	grub-installer/enable_os_prober_otheros_yes	boolean	true
+# Tving GRUB-installasjon til stien for EFI fjernbart media?
+grub-installer	grub-installer/force-efi-extra-removable	boolean	false
+# Klarte ikke å installere GRUB på 
+grub-installer	grub-installer/grub-install-failed	error	
+# for internal use; can be preseeded
+grub-installer	grub-installer/grub2_instead_of_grub_legacy	boolean	true
+# Installer GRUB?
+grub-installer	grub-installer/grub_not_mature_on_this_platform	boolean	false
+# for internal use; can be preseeded
+grub-installer	grub-installer/make_active	boolean	true
+# Klarte ikke å montere /target/proc
+grub-installer	grub-installer/mounterr	error	
+# Vil du installere oppstartslasteren Grub på multipath-enheten?
+grub-installer	grub-installer/multipath	boolean	true
+# Klarte ikke å sette opp GRUB
+grub-installer	grub-installer/multipath-error	error	
+# Installer oppstartssystemet GRUB på din primære lagringsenhet?
+grub-installer	grub-installer/only_debian	boolean	true
+# Feil ved inntastingen av passordet
+grub-installer	grub-installer/password-mismatch	error	
+# for internal use; can be preseeded
+grub-installer	grub-installer/skip	boolean	false
+# Klarte ikke å sette opp GRUB
+grub-installer	grub-installer/update-grub-failed	error	
+# Oppdatere NVRAM-variabler til å automatisk starte Debian?
+grub-installer	grub-installer/update-nvram	boolean	true
+# Installer oppstartssystemet GRUB på din primære lagringsenhet?
+grub-installer	grub-installer/with_other_os	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	grub2/linux_cmdline_default	string	net.ifnames=0 quiet
+# Dummy template for preseeding unavailable questions
+d-i	hddtemp/daemon	string	false
+# for internal use; can be preseeded
+d-i	hw-detect/load-ide	boolean	false
+# Laste manglende fastvare fra et fjernbart medium?
+d-i	hw-detect/load_firmware	boolean	true
+# Laste manglende drivere fra et fjernbart medium?
+d-i	hw-detect/load_media	boolean	false
+# Det oppsto en feil under kjøringen av «»
+d-i	hw-detect/modprobe_error	error	
+# Valgmuligheter for PCMCIA-ressursområde:
+d-i	hw-detect/pcmcia_resources	string	
+# Skriv inn eventuelle tilleggsparametere for modulen :
+d-i	hw-detect/retry_params	string	
+# Moduler som skal lastes:
+# Choices: usb-storage (USB storage)
+d-i	hw-detect/select_modules	multiselect	usb-storage (USB storage)
+# Vil du starte tjenester for PC-kort?
+d-i	hw-detect/start_pcmcia	boolean	true
+# Tast som skal fungere som AltGr:
+# Choices: Standarden for tastaturutformingen, Ingen AltGr-tast, Høyre Alt (AltGr), Høyre Ctrl, Høyre logotast, Menytast, Venstre Alt, Venstre logotast, Enter-tasten på det numeriske tastaturet, Begge Logo-tastene, Begge Alt-tastene
+d-i	keyboard-configuration/altgr	select	The default for the keyboard layout
+# Compose-tast:
+# Choices: Ingen Compose-tast, Høyre Alt (AltGr), Høyre Ctrl, Høyre logotast, Menytast, Venstre logotast, Caps Lock
+d-i	keyboard-configuration/compose	select	No compose key
+# Bruk Ctrl + Alt + Rettetast for å stoppe X-tjeneren?
+d-i	keyboard-configuration/ctrl_alt_bksp	boolean	false
+# Opprinnelsesland for dette tastaturet:
+# Choices: 
+d-i	keyboard-configuration/layout	select	
+# for internal use
+d-i	keyboard-configuration/layoutcode	string	no
+# Tastaturtype:
+# Choices: 
+d-i	keyboard-configuration/model	select	
+# for internal use
+d-i	keyboard-configuration/modelcode	string	pc105
+# for internal use
+d-i	keyboard-configuration/optionscode	string	
+# for internal use
+d-i	keyboard-configuration/store_defaults_in_debconf_db	boolean	true
+# Metode for å skifte midlertidig mellom nasjonal- og Latin-modus:
+# Choices: Ingen midlertidig skifting, Begge Logo-tastene, Høyre Alt (AltGr), Høyre logotast, Venstre Alt, Venstre logotast
+d-i	keyboard-configuration/switch	select	No temporary switch
+# Metode for å skifte mellom nasjonal- og Latin-modus:
+# Choices: Caps Lock, Høyre Alt (AltGr), Høyre Ctrl, Høyre Shift, Høyre logotast, Menytast, Alt + Shift, Ctrl + Shift, Ctrl + Alt, Alt + Caps Lock, Venste Ctrl + Venstre Shift, Venstre Alt, Venstre Ctrl, Venstre Shift, Venstre logotast, Scroll Lock tast, Ingen skifting
+d-i	keyboard-configuration/toggle	select	No toggling
+# Behold gjeldende tastaturutforming i konfigurasjonsfilen?
+d-i	keyboard-configuration/unsupported_config_layout	boolean	true
+# Behold gjeldende tastaturvalg i konfigurasjonsfilen?
+d-i	keyboard-configuration/unsupported_config_options	boolean	true
+# Behold standard tastaturutforming ()?
+d-i	keyboard-configuration/unsupported_layout	boolean	true
+# Behold standard tastaturvalg ()?
+d-i	keyboard-configuration/unsupported_options	boolean	true
+# Tastaturutforming:
+# Choices: 
+d-i	keyboard-configuration/variant	select	
+# for internal use
+d-i	keyboard-configuration/variantcode	string	
+# Tasteoppsett som skal brukes:
+# Choices: Engelsk (USA), Albansk, Arabisk, Asturisk, Bangladesh, Hviterussisk, bengali, Belgisk, Tamazight (latinsk alfabet), Bosnisk, Brasiliansk, Engelsk (Storbritannia), Bulgarsk (BDS-oppsett), Bulgarsk (phonetic-oppsett), Burmesisk, Fransk (Canada), Kanadisk\, flerspråklig, Katalansk, Kinesisk, Kroatisk, Tsjekkisk, Dansk, Nederlandsk, Dvorak, dzongkha, Esperanto, Estisk, Etiopisk, Finsk, Fransk, Georgisk, Tysk, Gresk, gujarati, gurmukhi, Hebraisk, hindi, Ungarsk, Islandsk, Irsk, Italiensk, Japansk, kannada, kasakhisk, Khmer, kirgisisk, Koreansk, Kurdisk (F-oppsett), Kurdisk (Q-oppsett), laotisk, Latinamerikansk, Latvisk, Litauisk, Makedonsk, malayalam, nepalsk, Nord-samisk, Norsk, Persisk, Filippinsk, Polsk, Portugisisk, Punjabi, Rumensk, Russisk, Serbisk (kyrillisk), Sindhi, Singalesisk, Slovakisk, Slovensk, Spansk, Svensk, Fransk (Sveits), Tysk (Sveits), Tadsjikisk, Tamilsk, Telugu, Thai, Tibetansk, Tyrkisk (F-oppsett), Tyrkisk (Q-oppsett), Ukrainsk, Uigursk, Vietnamesisk
+d-i	keyboard-configuration/xkb-keymap	select	no
+# Kontinent eller område:
+# Choices: Afrika, Antarktika, Asia, Atlanterhavet, Det karibiske hav, Mellom-Amerika, Europa, Det indiske hav, Nord-Amerika, Oseania, Sør-Amerika
+d-i	localechooser/continentlist	select	Europe
+# 
+# Choices: Algerie, Angola, Benin, Botswana, Burkina Faso, Burundi, Kapp Verde, Kamerun, Den sentralafrikanske republikk, Tsjad, Kongo, Kongo\, Den demokratiske republikk, Elfenbenskysten, Djibouti, Egypt, Ekvatorial-Guinea, Eritrea, Eswatini (tidligere Swasiland), Etiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Libya, Malawi, Mali, Mauritania, Marokko, Mosambik, Namibia, Niger, Nigeria, Rwanda, São Tomé og Príncipe, Senegal, Sierra Leone, Somalia, Sør-Afrika, Sør-Sudan, Sudan, Tanzania, Togo, Tunisia, Uganda, Vest-Sahara, Zambia, Zimbabwe
+d-i	localechooser/countrylist/Africa	select	
+# 
+# Choices: Antarktika
+d-i	localechooser/countrylist/Antarctica	select	
+# 
+# Choices: Afghanistan, Bahrain, Bangladesh, Bhutan, Brunei Darussalam, Kambodsja, Kina, Hongkong, India, Indonesia, Iran, Irak, Israel, Japan, Jordan, Kasakhstan, Kuwait, Kirgisistan, Laos, Libanon, Macao, Malaysia, Mongolia, Myanmar, Nepal, Nord-Korea, Oman, Pakistan, Palestina\, staten, Filippinene, Qatar, Saudi-Arabia, Singapore, Sør-Korea, Sri Lanka, Syria, Taiwan, Tadsjikistan, Thailand, Øst-Timor, Turkmenistan, Türkiye, De forente arabiske emirater, Usbekistan, Vietnam, Jemen
+d-i	localechooser/countrylist/Asia	select	
+# 
+# Choices: Bouvetøya, Falklandsøyene, Saint Helena\, Ascension og Tristan da Cunha, Sør-Georgia og Sør-Sandwichøyene
+d-i	localechooser/countrylist/Atlantic_Ocean	select	
+# 
+# Choices: Anguilla, Antigua og Barbuda, Aruba, Bahamas, Barbados, Bermuda, Bonaire\, Sint Eustatius og Saba, Caymanøyene, Cuba, Curaçao, Dominica, Den dominikanske republikk, Grenada, Guadeloupe, Haiti, Jamaica, Martinique, Montserrat, Puerto Rico, Saint-Barthélemy, Saint Kitts og Nevis, Saint Lucia, Saint Martin (fransk del), Saint Vincent og Grenadinene, Sint Maarten (nederlandsk del), Trinidad og Tobago, Turks- og Caicosøyene, Jomfruøyene (Storbritannia), Jomfruøyene (USA)
+d-i	localechooser/countrylist/Caribbean	select	
+# 
+# Choices: Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, Panama
+d-i	localechooser/countrylist/Central_America	select	
+# Land, territorium eller område:
+# Choices: Albania, Andorra, Armenia, Østerrike, Aserbajdsjan, Hviterussland, Belgia, Bosnia-Hercegovina, Bulgaria, Kroatia, Kypros, Tsjekkia, Danmark, Estland, Færøyene, Finland, Frankrike, Georgia, Tyskland, Gibraltar, Hellas, Grønland, Guernsey, Vatikanstaten, Ungarn, Island, Irland, Man, Italia, Jersey, Latvia, Liechtenstein, Litauen, Luxembourg, Malta, Moldova, Monaco, Montenegro, Nederland, Nord-Makedonia, Norge, Polen, Portugal, Romania, Den russiske føderasjon, San Marino, Serbia, Slovakia, Slovenia, Spania, Svalbard og Jan Mayen, Sverige, Sveits, Ukraina, Storbritannia, Åland
+d-i	localechooser/countrylist/Europe	select	NO
+# 
+# Choices: Det britiske territoriet i Indiahavet, Christmasøya, Kokosøyene, Komorene, Franske sørlige territorier, Heard- og McDonaldøyene, Madagaskar, Maldivene, Mauritius, Mayotte, Réunion, Seychellene
+d-i	localechooser/countrylist/Indian_Ocean	select	
+# 
+# Choices: Canada, Mexico, Saint-Pierre og Miquelon, De forente stater
+d-i	localechooser/countrylist/North_America	select	
+# 
+# Choices: Amerikansk Samoa, Australia, Cookøyene, Fiji, Fransk Polynesia, Guam, Kiribati, Marshalløyene, Mikronesia\, Føderasjonen, Nauru, Ny-Caledonia, New Zealand, Niue, Norfolkøya, Nord-Marianene, Palau, Papua Ny-Guinea, Pitcairn, Samoa, Salomonøyene, Tokelau, Tonga, Tuvalu, Mindre utenforliggende øyer til USA, Vanuatu, Wallis og Futunaøyene
+d-i	localechooser/countrylist/Oceania	select	
+# 
+# Choices: Argentina, Bolivia, Brasil, Chile, Colombia, Ecuador, Fransk Guyana, Guyana, Paraguay, Peru, Surinam, Uruguay, Venezuela
+d-i	localechooser/countrylist/South_America	select	
+# lokale
+d-i	localechooser/help/locale	note	
+# Language:
+# Choices: C${!TAB}-${!TAB}No localization, Albanian${!TAB}-${!TAB}Shqip, Arabic${!TAB}-${!TAB}عربي, Asturian${!TAB}-${!TAB}Asturianu, Basque${!TAB}-${!TAB}Euskara, Belarusian${!TAB}-${!TAB}Беларуская, Bosnian${!TAB}-${!TAB}Bosanski, Bulgarian${!TAB}-${!TAB}Български, Catalan${!TAB}-${!TAB}Català, Chinese (Simplified)${!TAB}-${!TAB}中文(简体), Chinese (Traditional)${!TAB}-${!TAB}中文(繁體), Croatian${!TAB}-${!TAB}Hrvatski, Czech${!TAB}-${!TAB}Čeština, Danish${!TAB}-${!TAB}Dansk, Dutch${!TAB}-${!TAB}Nederlands, English${!TAB}-${!TAB}English, Esperanto${!TAB}-${!TAB}Esperanto, Estonian${!TAB}-${!TAB}Eesti, Finnish${!TAB}-${!TAB}Suomi, French${!TAB}-${!TAB}Français, Galician${!TAB}-${!TAB}Galego, Georgian${!TAB}-${!TAB}ქართული, German${!TAB}-${!TAB}Deutsch, Greek${!TAB}-${!TAB}Ελληνικά, Hebrew${!TAB}-${!TAB}עברית, Hungarian${!TAB}-${!TAB}Magyar, Icelandic${!TAB}-${!TAB}Íslenska, Indonesian${!TAB}-${!TAB}Bahasa Indonesia, Irish${!TAB}-${!TAB}Gaeilge, Italian${!TAB}-${!TAB}Italiano, Japanese${!TAB}-${!TAB}日本語, Kazakh${!TAB}-${!TAB}Қазақ, Korean${!TAB}-${!TAB}한국어, Kurdish${!TAB}-${!TAB}Kurdî, Lao${!TAB}-${!TAB}ລາວ, Latvian${!TAB}-${!TAB}Latviski, Lithuanian${!TAB}-${!TAB}Lietuviškai, Macedonian${!TAB}-${!TAB}Македонски, Northern Sami${!TAB}-${!TAB}Sámegillii, Norwegian Bokmaal${!TAB}-${!TAB}Norsk bokmål, Norwegian Nynorsk${!TAB}-${!TAB}Norsk nynorsk, Occitan${!TAB}-${!TAB}Occitan, Persian${!TAB}-${!TAB}فارسی, Polish${!TAB}-${!TAB}Polski, Portuguese${!TAB}-${!TAB}Português, Portuguese (Brazil)${!TAB}-${!TAB}Português do Brasil, Romanian${!TAB}-${!TAB}Română, Russian${!TAB}-${!TAB}Русский, Serbian (Cyrillic)${!TAB}-${!TAB}Српски, Slovak${!TAB}-${!TAB}Slovenčina, Slovenian${!TAB}-${!TAB}Slovenščina, Spanish${!TAB}-${!TAB}Español, Swedish${!TAB}-${!TAB}Svenska, Tagalog${!TAB}-${!TAB}Tagalog, Tajik${!TAB}-${!TAB}Тоҷикӣ, Thai${!TAB}-${!TAB}ภาษาไทย, Turkish${!TAB}-${!TAB}Türkçe, Ukrainian${!TAB}-${!TAB}Українська, Uyghur${!TAB}-${!TAB}ئۇيغۇرچە, Vietnamese${!TAB}-${!TAB}Tiếng Việt, Welsh${!TAB}-${!TAB}Cymraeg
+d-i	localechooser/languagelist	select	nb_NO
+# Land som standard lokaleinnstillinger skal baseres på:
+# Choices: 
+d-i	localechooser/preferred-locale	select	
+# 
+# Choices: Syria, Jordan, United Arab Emirates, Bahrain, Algeria, Saudi Arabia, Sudan, Iraq, Kuwait, Morocco, India, Yemen, Tunisia, South Sudan, Oman, Qatar, Lebanon, Libya, Egypt, other
+d-i	localechooser/shortlist/ar	select	
+# 
+# Choices: Bangladesh, India, other
+d-i	localechooser/shortlist/bn	select	
+# 
+# Choices: China, India, other
+d-i	localechooser/shortlist/bo	select	
+# 
+# Choices: Andorra, Spain, France, Italy, other
+d-i	localechooser/shortlist/ca	select	
+# 
+# Choices: Belgium, Germany, Italy, Liechtenstein, Luxembourg, Switzerland, Austria, other
+d-i	localechooser/shortlist/de	select	
+# 
+# Choices: Greece, Cyprus, other
+d-i	localechooser/shortlist/el	select	
+# 
+# Choices: Antigua and Barbuda, Australia, Botswana, Canada, Hong Kong, India, Ireland, Israel, New Zealand, Nigeria, Philippines, Seychelles, Singapore, South Africa, United Kingdom, United States, Zambia, Zimbabwe, other
+d-i	localechooser/shortlist/en	select	
+# 
+# Choices: Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Ecuador, El Salvador, Spain, United States, Guatemala, Honduras, Mexico, Nicaragua, Panama, Paraguay, Peru, Puerto Rico, Dominican Republic, Uruguay, Venezuela, other
+d-i	localechooser/shortlist/es	select	
+# 
+# Choices: Spain, France, other
+d-i	localechooser/shortlist/eu	select	
+# 
+# Choices: Belgium, Canada, France, Luxembourg, Switzerland, other
+d-i	localechooser/shortlist/fr	select	
+# 
+# Choices: Italy, Switzerland, other
+d-i	localechooser/shortlist/it	select	
+# 
+# Choices: Aruba, Belgium, Netherlands, other
+d-i	localechooser/shortlist/nl	select	
+# 
+# Choices: Pakistan, India, other
+d-i	localechooser/shortlist/pa	select	
+# 
+# Choices: Brazil, Portugal, other
+d-i	localechooser/shortlist/pt	select	
+# 
+# Choices: Brazil, Portugal, other
+d-i	localechooser/shortlist/pt_BR	select	
+# 
+# Choices: Russian Federation, Ukraine, other
+d-i	localechooser/shortlist/ru	select	
+# 
+# Choices: North Macedonia, Albania, other
+d-i	localechooser/shortlist/sq	select	
+# 
+# Choices: Serbia, Montenegro, other
+d-i	localechooser/shortlist/sr	select	
+# 
+# Choices: Finland, Sverige, annat
+d-i	localechooser/shortlist/sv	select	
+# 
+# Choices: India, Sri Lanka, other
+d-i	localechooser/shortlist/ta	select	
+# 
+# Choices: Cyprus, Türkiye, other
+d-i	localechooser/shortlist/tr	select	
+# 
+# Choices: China, Taiwan, Singapore, Hong Kong, other
+d-i	localechooser/shortlist/zh_CN	select	
+# 
+# Choices: China, Singapore, Taiwan, Hong Kong, other
+d-i	localechooser/shortlist/zh_TW	select	
+# Ekstra lokaler:
+# Choices: aa_DJ.UTF-8, aa_DJ, aa_ER, aa_ER@saaho, aa_ET, af_ZA.UTF-8, af_ZA, agr_PE, ak_GH, am_ET, an_ES.UTF-8, an_ES, anp_IN, ar_AE.UTF-8, ar_AE, ar_BH.UTF-8, ar_BH, ar_DZ.UTF-8, ar_DZ, ar_EG.UTF-8, ar_EG, ar_IN, ar_IQ.UTF-8, ar_IQ, ar_JO.UTF-8, ar_JO, ar_KW.UTF-8, ar_KW, ar_LB.UTF-8, ar_LB, ar_LY.UTF-8, ar_LY, ar_MA.UTF-8, ar_MA, ar_OM.UTF-8, ar_OM, ar_QA.UTF-8, ar_QA, ar_SA.UTF-8, ar_SA, ar_SD.UTF-8, ar_SD, ar_SS, ar_SY.UTF-8, ar_SY, ar_TN.UTF-8, ar_TN, ar_YE.UTF-8, ar_YE, ayc_PE, az_AZ, az_IR, as_IN, ast_ES.UTF-8, ast_ES, be_BY.UTF-8, be_BY, be_BY@latin, bem_ZM, ber_DZ, ber_MA, bg_BG.UTF-8, bg_BG, bhb_IN.UTF-8, bho_IN, bho_NP, bi_VU, bn_BD, bn_IN, bo_CN, bo_IN, br_FR.UTF-8, br_FR, br_FR@euro, brx_IN, bs_BA.UTF-8, bs_BA, byn_ER, C.UTF-8, ca_AD.UTF-8, ca_AD, ca_ES.UTF-8, ca_ES, ca_ES@euro, ca_ES@valencia, ca_FR.UTF-8, ca_FR, ca_IT.UTF-8, ca_IT, ce_RU, chr_US, ckb_IQ, cmn_TW, crh_UA, cs_CZ.UTF-8, cs_CZ, csb_PL, cv_RU, cy_GB.UTF-8, cy_GB, da_DK.UTF-8, da_DK, de_AT.UTF-8, de_AT, de_AT@euro, de_BE.UTF-8, de_BE, de_BE@euro, de_CH.UTF-8, de_CH, de_DE.UTF-8, de_DE, de_DE@euro, de_IT.UTF-8, de_IT, de_LI.UTF-8, de_LU.UTF-8, de_LU, de_LU@euro, doi_IN, dsb_DE, dv_MV, dz_BT, el_GR.UTF-8, el_GR, el_GR@euro, el_CY.UTF-8, el_CY, en_AG, en_AU.UTF-8, en_AU, en_BW.UTF-8, en_BW, en_CA.UTF-8, en_CA, en_DK.UTF-8, en_DK.ISO-8859-15, en_DK, en_GB.UTF-8, en_GB, en_GB.ISO-8859-15, en_HK.UTF-8, en_HK, en_IE.UTF-8, en_IE, en_IE@euro, en_IL, en_IN, en_NG, en_NZ.UTF-8, en_NZ, en_PH.UTF-8, en_PH, en_SC.UTF-8, en_SG.UTF-8, en_SG, en_US.UTF-8, en_US, en_US.ISO-8859-15, en_ZA.UTF-8, en_ZA, en_ZM, en_ZW.UTF-8, en_ZW, eo, es_AR.UTF-8, es_AR, es_BO.UTF-8, es_BO, es_CL.UTF-8, es_CL, es_CO.UTF-8, es_CO, es_CR.UTF-8, es_CR, es_CU, es_DO.UTF-8, es_DO, es_EC.UTF-8, es_EC, es_ES.UTF-8, es_ES, es_ES@euro, es_GT.UTF-8, es_GT, es_HN.UTF-8, es_HN, es_MX.UTF-8, es_MX, es_NI.UTF-8, es_NI, es_PA.UTF-8, es_PA, es_PE.UTF-8, es_PE, es_PR.UTF-8, es_PR, es_PY.UTF-8, es_PY, es_SV.UTF-8, es_SV, es_US.UTF-8, es_US, es_UY.UTF-8, es_UY, es_VE.UTF-8, es_VE, et_EE.UTF-8, et_EE, et_EE.ISO-8859-15, eu_ES.UTF-8, eu_ES, eu_ES@euro, eu_FR.UTF-8, eu_FR, eu_FR@euro, fa_IR, ff_SN, fi_FI.UTF-8, fi_FI, fi_FI@euro, fil_PH, fo_FO.UTF-8, fo_FO, fr_BE.UTF-8, fr_BE, fr_BE@euro, fr_CA.UTF-8, fr_CA, fr_CH.UTF-8, fr_CH, fr_FR.UTF-8, fr_FR, fr_FR@euro, fr_LU.UTF-8, fr_LU, fr_LU@euro, fur_IT, fy_NL, fy_DE, ga_IE.UTF-8, ga_IE, ga_IE@euro, gd_GB.UTF-8, gd_GB, gez_ER, gez_ER@abegede, gez_ET, gez_ET@abegede, gl_ES.UTF-8, gl_ES, gl_ES@euro, gu_IN, gv_GB.UTF-8, gv_GB, ha_NG, hak_TW, he_IL.UTF-8, he_IL, hi_IN, hif_FJ, hne_IN, hr_HR.UTF-8, hr_HR, hsb_DE.UTF-8, hsb_DE, ht_HT, hu_HU.UTF-8, hu_HU, hy_AM, hy_AM.ARMSCII-8, ia_FR, id_ID.UTF-8, id_ID, ig_NG, ik_CA, is_IS.UTF-8, is_IS, it_CH.UTF-8, it_CH, it_IT.UTF-8, it_IT, it_IT@euro, iu_CA, ja_JP.UTF-8, ja_JP.EUC-JP, ka_GE.UTF-8, ka_GE, kab_DZ, kk_KZ.UTF-8, kk_KZ, kk_KZ.RK1048, kl_GL.UTF-8, kl_GL, km_KH, kn_IN, ko_KR.UTF-8, ko_KR.EUC-KR, kok_IN, ks_IN, ks_IN@devanagari, ku_TR.UTF-8, ku_TR, kw_GB.UTF-8, kw_GB, ky_KG, lb_LU, lg_UG.UTF-8, lg_UG, li_BE, li_NL, lij_IT, ln_CD, lo_LA, lt_LT.UTF-8, lt_LT, lv_LV.UTF-8, lv_LV, lzh_TW, mag_IN, mai_IN, mai_NP, mfe_MU, mg_MG.UTF-8, mg_MG, mhr_RU, mi_NZ.UTF-8, mi_NZ, miq_NI, mjw_IN, mk_MK.UTF-8, mk_MK, ml_IN, mn_MN, mni_IN, mnw_MM, mr_IN, ms_MY.UTF-8, ms_MY, mt_MT.UTF-8, mt_MT, my_MM, nan_TW, nan_TW@latin, nb_NO, nds_DE, nds_NL, ne_NP, nhn_MX, niu_NU, niu_NZ, nl_AW, nl_BE.UTF-8, nl_BE, nl_BE@euro, nl_NL.UTF-8, nl_NL, nl_NL@euro, nn_NO.UTF-8, nn_NO, nr_ZA, nso_ZA, oc_FR.UTF-8, oc_FR, om_ET, om_KE.UTF-8, om_KE, or_IN, os_RU, pa_IN, pa_PK, pap_AW, pap_CW, pl_PL.UTF-8, pl_PL, ps_AF, pt_BR.UTF-8, pt_BR, pt_PT.UTF-8, pt_PT, pt_PT@euro, quz_PE, raj_IN, rif_MA, ro_RO.UTF-8, ro_RO, ru_RU.UTF-8, ru_RU.KOI8-R, ru_RU, ru_RU.CP1251, ru_UA.UTF-8, ru_UA, rw_RW, sa_IN, sah_RU, sat_IN, sc_IT, sd_IN, sd_IN@devanagari, se_NO, sgs_LT, shn_MM, shs_CA, si_LK, sid_ET, sk_SK.UTF-8, sk_SK, sl_SI.UTF-8, sl_SI, sm_WS, so_DJ.UTF-8, so_DJ, so_ET, so_KE.UTF-8, so_KE, so_SO.UTF-8, so_SO, sq_AL.UTF-8, sq_AL, sq_MK, sr_ME, sr_RS, sr_RS@latin, ss_ZA, st_ZA.UTF-8, st_ZA, sv_FI.UTF-8, sv_FI, sv_FI@euro, sv_SE.UTF-8, sv_SE, sv_SE.ISO-8859-15, sw_KE, sw_TZ, syr, szl_PL, ta_IN, ta_LK, tcy_IN.UTF-8, te_IN, tg_TJ.UTF-8, tg_TJ, th_TH.UTF-8, th_TH, the_NP, ti_ER, ti_ET, tig_ER, tk_TM, tl_PH.UTF-8, tl_PH, tn_ZA, to_TO, tpi_PG, tr_CY.UTF-8, tr_CY, tr_TR.UTF-8, tr_TR, ts_ZA, tt_RU, tt_RU@iqtelif, ug_CN, uk_UA.UTF-8, uk_UA, unm_US, ur_IN, ur_PK, uz_UZ.UTF-8, uz_UZ, uz_UZ@cyrillic, ve_ZA, vi_VN, wa_BE.UTF-8, wa_BE, wa_BE@euro, wae_CH, wal_ET, wo_SN, xh_ZA.UTF-8, xh_ZA, yi_US.UTF-8, yi_US, yo_NG, yue_HK, yuw_PG, zh_CN.UTF-8, zh_CN.GB18030, zh_CN.GBK, zh_CN, zh_HK.UTF-8, zh_HK, zh_SG.UTF-8, zh_SG.GBK, zh_SG, zh_TW.UTF-8, zh_TW.EUC-TW, zh_TW, zu_ZA.UTF-8, zu_ZA
+d-i	localechooser/supported-locales	multiselect	
+# Det er ikke lenger mulig å velge språk
+d-i	localechooser/translation/no-select	note	
+# Translations temporarily not available
+d-i	localechooser/translation/none-yet	note	
+# Vil du fortsette installasjonen på det valgte språket?
+d-i	localechooser/translation/warn-light	boolean	true
+# Vil du fortsette installasjonen på det valgte språket?
+d-i	localechooser/translation/warn-severe	boolean	false
+# Insufficient memory
+d-i	lowmem/insufficient	error	
+# Entering low memory mode
+d-i	lowmem/low	note	
+# Feil (ved) arkiv-speil
+choose-mirror-bin	mirror/bad	error	
+# for internal use only
+choose-mirror-bin	mirror/codename	string	
+# country code or "manual" (for internal use)
+choose-mirror-bin	mirror/country	string	
+# Katalogen der arkivet ligger:
+choose-mirror-bin	mirror/ftp/directory	string	/debian/
+# Vertsnavnet til Debian-speilet:
+choose-mirror-bin	mirror/ftp/hostname	string	mirror
+# Gi informasjon om FTP-mellomtjener (hvis du ikke har noen, la feltet stå tomt):
+choose-mirror-bin	mirror/ftp/proxy	string	
+# Landet til speilet for Debian-arkivet:
+# Choices: skriv inn informasjon manuelt, Argentina, Armenia, Australia, Østerrike, Hviterussland, Belgia, Brasil, Bulgaria, Kambodsja, Canada, Chile, Kina, Costa Rica, Kroatia, Tsjekkia, Danmark, Estland, Finland, Frankrike, Georgia, Tyskland, Hellas, Hongkong, Ungarn, Island, India, Indonesia, Iran, Israel, Italia, Japan, Kasakhstan, Kenya, Latvia, Litauen, Luxembourg, Moldova, Nederland, Ny-Caledonia, New Zealand, Nord-Makedonia, Norge, Polen, Portugal, Romania, Den russiske føderasjon, Réunion, Singapore, Slovakia, Slovenia, Sør-Afrika, Sør-Korea, Spania, Sverige, Sveits, Taiwan, Thailand, Türkiye, Ukraina, Storbritannia, De forente stater, Uruguay, Vietnam
+choose-mirror-bin	mirror/http/countries	select	NO
+# Katalogen der arkivet ligger:
+choose-mirror-bin	mirror/http/directory	string	/debian/
+# Vertsnavnet til Debian-speilet:
+choose-mirror-bin	mirror/http/hostname	string	deb.debian.org
+# Debian-speil:
+# Choices: 
+choose-mirror-bin	mirror/http/mirror	select	deb.debian.org
+# Gi informasjon om http-mellomtjener (eller la feltet stå tomt):
+choose-mirror-bin	mirror/http/proxy	string	
+# Landet til speilet for Debian-arkivet:
+# Choices: skriv inn informasjon manuelt
+choose-mirror-bin	mirror/https/countries	select	US
+# Gå tilbake og prøve en annen nettleser?
+choose-mirror-bin	mirror/no-default	boolean	true
+# Arkitekturen er ikke støttet
+choose-mirror-bin	mirror/noarch	error	
+# Protokoll for nedlasting av filer:
+# Choices: 
+choose-mirror-bin	mirror/protocol	select	http
+# Velg hvilken Debian-versjon som skal installeres:
+# Choices: 
+choose-mirror-bin	mirror/suite	select	
+# Feilformatert IP-adresse
+netcfg	netcfg/bad_ipaddress	error	
+# Ugyldig ventetid for nettverklink-deteksjon
+netcfg	netcfg/bad_link_wait_timeout	error	
+# Primært nettverksgrensesnitt:
+# Choices: 
+netcfg	netcfg/choose_interface	select	
+# Er denne informasjonen riktig?
+netcfg	netcfg/confirm_static	boolean	true
+# Automatisk oppsett av nettverket mislyktes
+netcfg	netcfg/dhcp_failed	note	
+# DHCP-vertsnavn:
+netcfg	netcfg/dhcp_hostname	string	
+# Metode for oppsett av nettverk:
+# Choices: Prøv å sette opp nettverket automatisk en gang til, Prøv automatisk nettverksoppsett igjen med et DHCP-vertsnavn, Sett opp nettverket manuelt, , Ikke sett opp nettverket nå
+netcfg	netcfg/dhcp_options	select	Configure network manually
+# for internal use; can be preseeded
+netcfg	netcfg/dhcp_timeout	string	25
+# for internal use; can be preseeded
+netcfg	netcfg/dhcpv6_timeout	string	15
+# for internal use; can be preseeded
+netcfg	netcfg/disable_autoconfig	boolean	false
+# for internal use; can be preseeded (deprecated)
+netcfg	netcfg/disable_dhcp	boolean	false
+# for internal use; can be preseeded
+netcfg	netcfg/enable	boolean	true
+# Feil
+netcfg	netcfg/error	error	
+# Kommer ikke fram til standardruteren
+netcfg	netcfg/gateway_unreachable	error	
+# Domenenavn:
+netcfg	netcfg/get_domain	string	intern
+# Standardruter:
+netcfg	netcfg/get_gateway	string	
+# Vertsnavn:
+netcfg	netcfg/get_hostname	string	localhost
+# IP-adresse:
+netcfg	netcfg/get_ipaddress	string	
+# Adresser til navnetjenerne:
+netcfg	netcfg/get_nameservers	string	
+# Nettmaske:
+netcfg	netcfg/get_netmask	string	
+# Punkt-til-punkt-adresse:
+netcfg	netcfg/get_pointopoint	string	
+# for internal use; can be preseeded
+netcfg	netcfg/hostname	string	
+# Ugyldig ESSID
+netcfg	netcfg/invalid_essid	error	
+# Ugyldig vertsnavn
+netcfg	netcfg/invalid_hostname	error	
+# Ugyldig passfrase
+netcfg	netcfg/invalid_pass	error	
+# Ugyldig WEP-nøkkel
+netcfg	netcfg/invalid_wep	error	
+# Av-bryter på  er aktivert
+netcfg	netcfg/kill_switch_enabled	note	
+# Ventetid (i sekunder) for link-deteksjon:
+netcfg	netcfg/link_wait_timeout	string	3
+# Vil du fortsett uten en standardrute (eng: route)?
+netcfg	netcfg/no_default_route	boolean	
+# Fant ingen DHCP-klient
+netcfg	netcfg/no_dhcp_client	error	
+# Fant intet nettverksgrensesnitt
+netcfg	netcfg/no_interfaces	error	
+# IPv6 ikke støttet for punkt-til-punkt lenker
+netcfg	netcfg/no_ipv6_pointopoint	error	
+# for internal use; can be preseeded
+# Choices: Network Manager, ifupdown (/etc/network/interfaces), No network configuration
+netcfg	netcfg/target_network_config	select	
+# Vil du sette opp nettverket automatisk?
+netcfg	netcfg/use_autoconfig	boolean	true
+# Type trådløst nettverk:
+# Choices: Infrastruktur (Håndtert) nettverk, Ad-hoc-nettverk (mellom datamaskiner)
+netcfg	netcfg/wireless_adhoc_managed	select	Infrastructure (Managed) network
+# Trådløs ESSID for :
+netcfg	netcfg/wireless_essid	string	
+# Trådløs ESSID for :
+netcfg	netcfg/wireless_essid_again	string	
+# Type trådløst nettverk for :
+# Choices: WEP/åpne nettverk, WPA/WPA2-PSK
+netcfg	netcfg/wireless_security_type	select	wpa
+# Trådløst nettverk:
+# Choices:  Oppgi ESSID manuelt
+netcfg	netcfg/wireless_show_essids	select	
+# WEP-nøkkel for den trådløse enheten :
+netcfg	netcfg/wireless_wep	string	
+# WPA/WPA2-passfrase for trådløs enhet :
+netcfg	netcfg/wireless_wpa	string	
+# Mislykket nøkkelutveksling og tilknytning
+netcfg	netcfg/wpa_supplicant_failed	note	
+# Ingen oppstartslaster er installert
+nobootloader	nobootloader/confirmation_common	note	
+# Angir fastprogram-variabler for automatisk oppstart
+nobootloader	nobootloader/confirmation_powerpc_chrp_pegasos	note	
+# Angir fastprogram-variabler for automatisk oppstart
+nobootloader	nobootloader/confirmation_powerpc_pasemi	note	
+# Klarte ikke å montere /target/proc
+nobootloader	nobootloader/mounterr	error	
+# for internal use; can be preseeded
+partman-auto-crypto	partman-auto-crypto/erase_disks	boolean	true
+# Ugyldig inndata
+partman-auto-lvm	partman-auto-lvm/bad_guided_size	error	
+#  er for stor
+partman-auto-lvm	partman-auto-lvm/big_guided_size	error	
+# Antall volumgrupper som skal brukes til veiledet partisjonering:
+partman-auto-lvm	partman-auto-lvm/guided_size	string	214.2 GB
+# Navnet på det grupperte dataområdet for det nye systemet:
+partman-auto-lvm	partman-auto-lvm/new_vg_name	string	vg_system
+# Navnet på det grupperte dataområdet for det nye systemet:
+partman-auto-lvm	partman-auto-lvm/new_vg_name_exists	string	
+# Vil du fortsette partisjoneringa uten /boot-partisjon?
+partman-auto-lvm	partman-auto-lvm/no_boot	boolean	
+# Intet fysisk dataområde definert i gruppert dataområde
+partman-auto-lvm	partman-auto-lvm/no_pv_in_vg	error	
+# Ikke-eksisterende fysisk dataområde
+partman-auto-lvm	partman-auto-lvm/no_such_pv	error	
+#  er for liten
+partman-auto-lvm	partman-auto-lvm/small_guided_size	error	
+# Klarte ikke å partisjonere den valgte harddisken
+partman-auto-lvm	partman-auto-lvm/unusable_recipe	error	
+# Uventet feil ved oppretting av et gruppert dataområde
+partman-auto-lvm	partman-auto-lvm/vg_create_error	error	
+# Et annet gruppert dataområde bruker dette navnet
+partman-auto-lvm	partman-auto-lvm/vg_exists	error	
+# Feil under oppsett av RAID
+partman-auto-raid	partman-auto-raid/error	error	
+# Ikke mange nok RAID-partisjoner oppgitt
+partman-auto-raid	partman-auto-raid/notenoughparts	error	
+# for internal use only
+partman-auto-raid	partman-auto-raid/raidnum	string	
+# for internal use; can be preseeded
+partman-auto-raid	partman-auto-raid/recipe	string	
+# Partisjoneringsmetode:
+# Choices: 
+partman-auto	partman-auto/automatically_partition	select	
+# Klarte ikke å partisjonere den valgte harddisken
+partman-auto	partman-auto/autopartitioning_failed	error	
+# for internal use; can be preseeded
+partman-auto	partman-auto/cap-ram	string	1024
+# Partisjoneringsoppsett:
+# Choices: 
+partman-auto	partman-auto/choose_recipe	select	Debian-Edu Standalone
+# for internal use; can be preseeded
+partman-auto	partman-auto/disk	string	
+# for internal use; can be preseeded
+partman-auto	partman-auto/expert_recipe	string	
+# for internal use; can be preseeded
+partman-auto	partman-auto/expert_recipe_file	string	/lib/partman/recipes/98edustandalone
+# Partisjoneringsmetode:
+# Choices: 
+partman-auto	partman-auto/init_automatically_partition	select	60some_device_lvm__________lvm
+# for internal use; can be preseeded
+partman-auto	partman-auto/method	string	lvm
+# Klarte ikke å partisjonere den valgte harddisken
+partman-auto	partman-auto/no_recipe	error	
+# Velg disk som skal partisjoneres:
+# Choices: 
+partman-auto	partman-auto/select_disk	select	
+# Kan ikke bruke det ledige området
+partman-auto	partman-auto/unusable_space	error	
+# Enheten er i bruk
+partman-base	partman-base/devicelocked	error	
+# Partisjonen er i bruk
+partman-base	partman-base/partlocked	error	
+# Ugyldig monteringspunkt
+partman-basicfilesystems	partman-basicfilesystems/bad_mountpoint	error	
+# Vil du gå tilbake til menyen og rette opp feilen?
+partman-basicfilesystems	partman-basicfilesystems/boot_not_ext2	boolean	
+# Vil du gå tilbake til menyen og rette opp feilen?
+partman-basicfilesystems	partman-basicfilesystems/boot_not_first_partition	boolean	
+# Vil du gå tilbake til menyen og rette opp feil?
+partman-basicfilesystems	partman-basicfilesystems/check_failed	boolean	
+# Navn på filsystemet på denne partisjonen:
+partman-basicfilesystems	partman-basicfilesystems/choose_label	string	
+# Klarte ikke å lage et filsystem
+partman-basicfilesystems	partman-basicfilesystems/create_failed	error	
+# Klarte ikke å lage et veksleminneområde
+partman-basicfilesystems	partman-basicfilesystems/create_swap_failed	error	
+# Monteringspunkt for denne partisjonen:
+# Choices: /dos, /windows, Skriv inn manuelt, Ikke monter
+partman-basicfilesystems	partman-basicfilesystems/fat_mountpoint	select	
+# Monteringsvalg:
+# Choices: 
+partman-basicfilesystems	partman-basicfilesystems/mountoptions	multiselect	
+# Monteringspunkt for denne partisjonen:
+# Choices: / - rot-filsystemet, /boot - faste filer for oppstartslasteren, /home - hjemmeområder for brukere, /tmp - midlertidige filer, /usr - statiske data, /var - variable data, /srv - data for tjenester som dette systemet tilbyr, /opt - programpakker som legges til manuelt, /usr/local - lokalt hierarki, Skriv inn manuelt, Ikke monter
+partman-basicfilesystems	partman-basicfilesystems/mountpoint	select	
+# Monteringspunkt for denne partisjonen:
+partman-basicfilesystems	partman-basicfilesystems/mountpoint_manual	string	
+# Vil du gå tilbake til partisjoneringsmenyen?
+partman-basicfilesystems	partman-basicfilesystems/no_mount_point	boolean	
+# Vil du gå tilbake til partisjoneringsmenyen?
+partman-basicfilesystems	partman-basicfilesystems/no_swap	boolean	true
+# Ugyldig filsystem for dette monteringspunktet
+partman-basicfilesystems	partman-basicfilesystems/posix_filesystem_required	error	
+# Prosent av blokkene i filsystemet som er reservert for root:
+partman-basicfilesystems	partman-basicfilesystems/specify_reserved	string	
+# Denne partisjonen brukes oftest til:
+# Choices: 
+partman-basicfilesystems	partman-basicfilesystems/specify_usage	select	
+# Vil du gå tilbake til menyen og rette opp feil?
+partman-basicfilesystems	partman-basicfilesystems/swap_check_failed	boolean	
+# Vil du gå tilbake til menyen?
+partman-basicmethods	partman-basicmethods/method_only	boolean	
+# /boot som btrfs-filsystem er ikke støttet
+partman-btrfs	partman-btrfs/btrfs_boot	error	
+# btrfs-rotfilsystem støttes ikke uten separat /boot
+partman-btrfs	partman-btrfs/btrfs_root	error	
+# Go back to the menu and resume partitioning?
+partman-cros	partman-cros/no_cros	boolean	
+# Kryptering for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/cipher	select	
+# Oppsett av krypterte dataområder mislyktes
+partman-crypto	partman-crypto/commit_failed	error	
+# Vil du skrive endringene til disk og sette opp krypterte dataområder?
+partman-crypto	partman-crypto/confirm	boolean	false
+# Vil du beholde det nåværende partisjonsoppsettet og sette opp kryptertedataområder?
+partman-crypto	partman-crypto/confirm_nochanges	boolean	false
+# Vil du skrive endringene til disk og sette opp krypterte dataområder?
+d-i	partman-crypto/confirm_nooverwrite	boolean	false
+# Ingen enheter valgt
+partman-crypto	partman-crypto/create/nosel	error	
+# Enheter som skal krypteres:
+# Choices: 
+partman-crypto	partman-crypto/create/partitions	multiselect	
+# Krypteringsoppsett mislyktes
+partman-crypto	partman-crypto/crypto_boot_not_possible	error	
+# Det lyktes ikke å slette data på 
+partman-crypto	partman-crypto/crypto_erase_failed	error	
+# Krypteringsoppsett mislyktes
+partman-crypto	partman-crypto/crypto_root_needs_boot	error	
+# Krypteringsmetode for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/crypto_type	select	
+# Sikkert at du vil slette data på ?
+partman-crypto	partman-crypto/crypto_warn_erase	boolean	false
+# Krypteringsnøkkelen for  blir nå laget.
+partman-crypto	partman-crypto/entropy	entropy	
+# Klargjøring av krypterte dataområder mislyktes
+partman-crypto	partman-crypto/init_failed	error	
+# Klarte ikke å laste ned krypto-komponenter
+partman-crypto	partman-crypto/install_udebs_failure	error	
+# Fortsett med å installere krypto-komponenter på tross av for lite minne?
+partman-crypto	partman-crypto/install_udebs_low_mem	boolean	
+# Algoritme for å lage initieringsvektor for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/ivalgorithm	select	
+# Feil under opprettelse av nøkkelfil
+partman-crypto	partman-crypto/keyfile-problem	error	
+# Type hash for krypteringsnøkkel for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/keyhash	select	
+# Nøkkelstørrelse for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/keysize	select	
+# Type krypteringsnøkkel for denne partisjonen:
+# Choices: 
+partman-crypto	partman-crypto/keytype	select	
+# Krypteringsoppsett handlinger
+# Choices: Opprett krypterte dataområder, Ferdig
+partman-crypto	partman-crypto/mainmenu	select	
+# Klarte ikke å installere krypteringspakka
+partman-crypto	partman-crypto/module_package_missing	error	
+# Ingen partisjoner å kryptere
+partman-crypto	partman-crypto/nothing_to_setup	note	
+# Nødvendige krypteringsinnstillinger mangler
+partman-crypto	partman-crypto/options_missing	error	
+# Tom passord-streng
+partman-crypto	partman-crypto/passphrase-empty	error	
+# Inndata-feil i passord-strengen
+partman-crypto	partman-crypto/passphrase-mismatch	error	
+# Det lyktes ikke å slette data på 
+partman-crypto	partman-crypto/plain_erase_failed	error	
+# Sikkert at du vil slette data på ?
+partman-crypto	partman-crypto/plain_warn_erase	boolean	false
+# Nødvendige programmer mangler
+partman-crypto	partman-crypto/tools_missing	note	
+# Fant usikkert veksleminneområde
+partman-crypto	partman-crypto/unsafe_swap	error	
+# Er du sikker på at du vil bruke en tilfeldig nøkkel?
+partman-crypto	partman-crypto/use_random_for_nonswap	boolean	false
+# Bruk svak passord-streng?
+partman-crypto	partman-crypto/weak_passphrase	boolean	false
+# Vil du å tilbake til menyen og fortsette partisjoneringa?
+partman-efi	partman-efi/no_efi	boolean	
+# Tving UEFI-installasjon?
+partman-efi	partman-efi/non_efi_system	boolean	
+# EFI-partisjonen er for liten
+partman-efi	partman-efi/too_small_efi	error	
+# Vil du gå tilbake til partisjoneringsmenyen?
+partman-ext3	partman-ext3/bad_alignment	boolean	
+# Gå tilbake til menyen for å sette oppstartsflagget?
+partman-ext3	partman-ext3/boot_not_bootable	boolean	
+# Vil du gå tilbake til menyen og rette opp feilen?
+partman-ext3	partman-ext3/boot_not_ext2_or_ext3	boolean	
+# iSCSI-mål portaladresse:
+partman-iscsi	partman-iscsi/login/address	string	
+# for internal use; can be preseeded
+partman-iscsi	partman-iscsi/login/all_targets	boolean	false
+# Tomt passord
+partman-iscsi	partman-iscsi/login/empty_password	error	
+# Klarte ikke logge inn i iSCSI
+partman-iscsi	partman-iscsi/login/failed	error	
+# iSCSi-mål brukernavn for :
+partman-iscsi	partman-iscsi/login/incoming_username	string	
+# Ingen iSCSI-mål oppdaget
+partman-iscsi	partman-iscsi/login/no_targets	error	
+# iSCSI-mål på :
+# Choices: 
+partman-iscsi	partman-iscsi/login/targets	multiselect	
+# iSCSI-initiativtaker brukernavn for :
+partman-iscsi	partman-iscsi/login/username	string	
+# Handlinger for iSCSI-oppsett
+# Choices: Logg inn i iSCSI-mål, Ferdig
+partman-iscsi	partman-iscsi/mainmenu	select	
+# Ugyldig navn på logisk dataområde eller gruppert område
+partman-lvm	partman-lvm/badnamegiven	error	
+# LVM-oppsett mislyktes
+partman-lvm	partman-lvm/commit_failed	error	
+# Vil du skrive endringene til harddiskene og sette opp LVM?
+partman-lvm	partman-lvm/confirm	boolean	true
+# Vil du beholde det nåværende partisjonsoppsettet og sette opp logisk volumstyring (LVM)?
+partman-lvm	partman-lvm/confirm_nochanges	boolean	false
+# Vil du skrive endringene til harddiskene og sette opp LVM?
+d-i	partman-lvm/confirm_nooverwrite	boolean	false
+# Fjerne alle eksisterende data om logiske dataområder?
+partman-lvm	partman-lvm/device_remove_lvm	boolean	true
+# Klarte ikke automatisk fjerne LVM-data
+partman-lvm	partman-lvm/device_remove_lvm_span	error	
+# Gjeldende LVM-oppsett:
+partman-lvm	partman-lvm/displayall	note	
+# Behandling av logiske dataområder
+partman-lvm	partman-lvm/help	note	
+# Feil ved opprettelsen av et nytt logisk dataområde
+partman-lvm	partman-lvm/lvcreate_error	error	
+# Feil ved opprettelsen av et nytt logisk dataområde
+partman-lvm	partman-lvm/lvcreate_exists	error	
+# Navn på det logiske dataområdet:
+partman-lvm	partman-lvm/lvcreate_name	string	
+# Fant ingen grupperte dataområder
+partman-lvm	partman-lvm/lvcreate_nofreevg	error	
+# Mangler navn på det logiske dataområdet
+partman-lvm	partman-lvm/lvcreate_nonamegiven	error	
+# Størrelsen på det logiske dataområdet:
+partman-lvm	partman-lvm/lvcreate_size	string	
+# Gruppert dataområde:
+# Choices: 
+partman-lvm	partman-lvm/lvcreate_vgnames	select	
+# Feil ved sletting av det logiske dataområdet
+partman-lvm	partman-lvm/lvdelete_error	error	
+# Logisk dataområde:
+# Choices: 
+partman-lvm	partman-lvm/lvdelete_lvnames	select	
+# Fant intet logisk dataområde
+partman-lvm	partman-lvm/lvdelete_nolv	error	
+# Oppsettsmeny for LVM (logiske dataområder):
+# Choices: 
+partman-lvm	partman-lvm/mainmenu	select	
+# Håndtereren for logiske dataområder er ikke tilgjengelig
+partman-lvm	partman-lvm/nolvm	error	
+# Fant ingen brukbare fysiske dataområder
+partman-lvm	partman-lvm/nopartitions	error	
+# Feil ved klargjøring av det fysiske dataområdet
+partman-lvm	partman-lvm/pvcreate_error	error	
+# Navnet på det grupperte dataområdet er det samme som på en enhet
+partman-lvm	partman-lvm/vgcreate_devnameused	error	
+# Feil ved oppretting av et gruppert dataområde
+partman-lvm	partman-lvm/vgcreate_error	error	
+# Gi det grupperte dataområdet et navn:
+partman-lvm	partman-lvm/vgcreate_name	string	
+# Et annet gruppert dataområde bruker dette navnet
+partman-lvm	partman-lvm/vgcreate_nameused	error	
+# Mangler et navn på det grupperte dataområdet
+partman-lvm	partman-lvm/vgcreate_nonamegiven	error	
+# Ingen fysiske dataområder ble valgt
+partman-lvm	partman-lvm/vgcreate_nosel	error	
+# Enheter på det nye grupperte dataområdet:
+# Choices: 
+partman-lvm	partman-lvm/vgcreate_parts	multiselect	
+# Er du sikker på at du vil slette det grupperte dataområdet?
+partman-lvm	partman-lvm/vgdelete_confirm	boolean	true
+# Feil ved sletting av et gruppert dataområde
+partman-lvm	partman-lvm/vgdelete_error	error	
+# Gruppert dataområde som skal slettes:
+# Choices: 
+partman-lvm	partman-lvm/vgdelete_names	select	
+# Fant ingen grupperte dataområder
+partman-lvm	partman-lvm/vgdelete_novg	error	
+# Feil ved utvidelsen av det grupperte dataområdet
+partman-lvm	partman-lvm/vgextend_error	error	
+# Grupperte dataområder som kan utvides:
+# Choices: 
+partman-lvm	partman-lvm/vgextend_names	select	
+# Ingen fysiske dataområder ble valgt
+partman-lvm	partman-lvm/vgextend_nosel	error	
+# Fant ingen grupperte dataområder
+partman-lvm	partman-lvm/vgextend_novg	error	
+# Enheter som skal legges til det grupperte dataområdet:
+# Choices: 
+partman-lvm	partman-lvm/vgextend_parts	multiselect	
+# Feil ved reduseringen av et gruppert dataområde
+partman-lvm	partman-lvm/vgreduce_error	error	
+# Gruppert dataområde som skal reduseres:
+# Choices: 
+partman-lvm	partman-lvm/vgreduce_names	select	
+# Ingen fysiske dataområder ble valgt
+partman-lvm	partman-lvm/vgreduce_nosel	error	
+# Fant ingen grupperte dataområder
+partman-lvm	partman-lvm/vgreduce_novg	error	
+# Enheter som skal fjernes fra det grupperte dataområdet:
+# Choices: 
+partman-lvm	partman-lvm/vgreduce_parts	multiselect	
+# RAID-oppsett mislyktes
+partman-md	partman-md/commit_failed	error	
+# Vil du skrive endringene til lagringsenhetene og sette opp RAID?
+partman-md	partman-md/confirm	boolean	false
+# Vil du beholde det nåværende partisjonsoppsettet og sette opp RAID?
+partman-md	partman-md/confirm_nochanges	boolean	false
+# Vil du skrive endringene til lagringsenhetene og sette opp RAID?
+d-i	partman-md/confirm_nooverwrite	boolean	false
+# Programvarestyrt RAID enhetstype:
+# Choices: RAID0, RAID1, RAID5, RAID6, RAID10
+partman-md	partman-md/createmain	select	
+# Ingen programvarestyrte RAID-enheter tilgjengelig
+partman-md	partman-md/delete_no_md	error	
+# Klarte ikke slette den programvarestyrte RAID-enheten
+partman-md	partman-md/deletefailed	error	
+# Programvarestyrt RAID-enhet som skal slettes:
+# Choices: 
+partman-md	partman-md/deletemenu	select	
+# Skal denne programvarestyrte RAID-enheten virkelig slettes?
+partman-md	partman-md/deleteverify	boolean	false
+# Fjern eksisterende programvare RAID-partisjoner?
+partman-md	partman-md/device_remove_md	boolean	false
+# Konfigurasjonshandlinger for programvarestyrt RAID
+# Choices: Lag MD-enhet, Slett MD-enhet, Ferdig
+partman-md	partman-md/mainmenu	select	
+# Programvarestyrt RAID ikke tilgjengelig
+partman-md	partman-md/nomd	error	
+# Ingen RAID-partisjoner tilgjengelig
+partman-md	partman-md/noparts	error	
+# Ikke tilstrekkelig mange RAID-partisjoner tilgjengelig
+partman-md	partman-md/notenoughparts	error	
+# Aktive enheter for RAID0-rekka:
+# Choices: 
+partman-md	partman-md/raid0devs	multiselect	
+# Utformingen av RAID10-rekka:
+partman-md	partman-md/raid10layout	string	n2
+# Antall aktive enheter for RAID-rekka:
+partman-md	partman-md/raiddevcount	string	
+# Aktive enheter for RAID-rekka:
+# Choices: 
+partman-md	partman-md/raiddevs	multiselect	
+# Antall reserveenheter for RAID-rekka:
+partman-md	partman-md/raidsparecount	string	
+# Reserveenheter for RAID-rekka:
+# Choices: 
+partman-md	partman-md/raidsparedevs	multiselect	
+# Ugyldig størrelse
+partman-partitioning	partman-partitioning/bad_new_partition_size	error	
+# Størrelsen du oppgav er ugyldig
+partman-partitioning	partman-partitioning/bad_new_size	error	
+# Oppgitt størrelse er for stor
+partman-partitioning	partman-partitioning/big_new_size	error	
+# Er du sikker på at du vil ha en oppstartbar logisk partisjon?
+partman-partitioning	partman-partitioning/bootable_logical	boolean	false
+# Type partisjonstabell:
+# Choices: aix, amiga, bsd, dvh, gpt, mac, msdos, pc98, sun, atari, loop
+partman-partitioning	partman-partitioning/choose_label	select	
+# Vil du lage ny, tom partisjonstabell på denne enheten?
+partman-partitioning	partman-partitioning/confirm_new_label	boolean	false
+# Vil du skrive endringene til harddiskene og fortsette?
+partman-partitioning	partman-partitioning/confirm_resize	boolean	
+# Vil du skriv en ny, tom partisjonstabell?
+partman-partitioning	partman-partitioning/confirm_write_new_label	boolean	false
+# for internal use; can be preseeded
+partman-partitioning	partman-partitioning/default_label	string	
+# Størrelsesendringen er ikke mulig
+partman-partitioning	partman-partitioning/impossible_resize	error	
+# Plassering av den nye partisjonen:
+# Choices: Begynnelsen, Slutten
+partman-partitioning	partman-partitioning/new_partition_place	select	
+# Ny størrelse på partisjon:
+partman-partitioning	partman-partitioning/new_partition_size	string	some number
+# Ny partisjon av type:
+# Choices: Primær, Logisk
+partman-partitioning	partman-partitioning/new_partition_type	select	
+# Ny størrelse på partisjon:
+partman-partitioning	partman-partitioning/new_size	string	some number
+# Feil under endring av størrelsen
+partman-partitioning	partman-partitioning/new_size_commit_failed	error	
+# Flagg på den nye partisjonen:
+# Choices: 
+partman-partitioning	partman-partitioning/set_flags	multiselect	
+# Partisjonsnavn:
+partman-partitioning	partman-partitioning/set_name	string	
+# Oppgitt størrelse er for liten
+partman-partitioning	partman-partitioning/small_new_size	error	
+# Vil du fortsette partisjoneringa?
+partman-partitioning	partman-partitioning/unknown_label	boolean	true
+# Vil du fortsette partisjoneringa?
+partman-partitioning	partman-partitioning/unsupported_label	boolean	false
+# Metode for å bruke denne partisjonen:
+# Choices: 
+partman-target	partman-target/choose_method	select	
+# Hjelp med partisjoneringa
+partman-target	partman-target/help	note	
+# Vil du fortsette partisjoneringa?
+partman-target	partman-target/mount_failed	boolean	true
+# Separat filsystem er ikke tillatt her
+partman-target	partman-target/must_be_on_root	error	
+# Intet rot-filsystem
+partman-target	partman-target/no_root	error	
+# Identiske navn for to filsystem
+partman-target	partman-target/same_label	error	
+# To filsystem har samme monteringspunkt
+partman-target	partman-target/same_mountpoint	error	
+# Partisjonsinnstillinger:
+# Choices: 
+partman-base	partman/active_partition	select	
+# for internal use; can be preseeded
+# Choices: cylinder, minimal, optimal
+partman-base	partman/alignment	select	optimal
+# Vil du gå tilbake til menyen og rette opp feilen?
+partman-ext3	partman/boot_not_first_partition	boolean	
+# Dette er en oversikt over partisjoner og monteringspunkter som er satt opp nå. Velg en partisjon eller enhet for å endre innstillingene (filsystem, monteringspunkt osv.), velg et ledig område hvis du vil legge til en partisjon, eller en enhet for å forberede enhetens partisjonstabell.
+# Choices: Partisjonering med veiledning, Sett opp programvare for RAID, Sett opp logiske dataområder (LVM), Sett opp krypterte dataområder, Sett opp iSCSI-dataområder, , LVM GD vg_system\, LD debianedufreespace - 157.2 GB Linux device-mapper (linear),    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}${!TAB}${!ALIGN=RIGHT}157.2 GB${!TAB}${!TAB}f${!TAB}keep${!TAB}${!TAB}/debianedufreespace${!TAB}, LVM GD vg_system\, LD home - 32.8 GB Linux device-mapper (linear),    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}${!TAB}${!ALIGN=RIGHT}32.8 GB${!TAB}${!TAB}f${!TAB}ext4${!TAB}${!TAB}/home${!TAB}, LVM GD vg_system\, LD root - 16.6 GB Linux device-mapper (linear),    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}${!TAB}${!ALIGN=RIGHT}16.6 GB${!TAB}${!TAB}f${!TAB}ext4${!TAB}${!TAB}/${!TAB}, LVM GD vg_system\, LD swap_1 - 2.0 GB Linux device-mapper (linear),    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}${!TAB}${!ALIGN=RIGHT}2.0 GB${!TAB}${!TAB}f${!TAB}veksleminne${!TAB}${!TAB}veksleminne${!TAB}, LVM GD vg_system\, LD var - 5.6 GB Linux device-mapper (linear),    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}${!TAB}${!ALIGN=RIGHT}5.6 GB${!TAB}${!TAB}f${!TAB}ext4${!TAB}${!TAB}/var${!TAB}, Virtuell disk 1 (vda) - 214.7 GB Virtio Block Device,    ${!TAB}${!ALIGN=RIGHT}Nr. 1${!TAB}primær${!TAB}${!ALIGN=RIGHT}510.7 MB${!TAB}${!TAB}f${!TAB}ext2${!TAB}${!TAB}/boot${!TAB},    ${!TAB}${!ALIGN=RIGHT}Nr. 5${!TAB}logisk${!TAB}${!ALIGN=RIGHT}214.2 GB${!TAB}${!TAB}K${!TAB}lvm${!TAB}${!TAB}${!TAB}, , Angre endringer på partisjoner, Gjør ferdig partisjoneringa og skriv endringene inn på harddisken
+partman-base	partman/choose_partition	select	90finish__________finish
+# Skrive endringene til diskene?
+partman-base	partman/confirm	boolean	true
+# Vil du fortsette med installasjonen?
+partman-base	partman/confirm_nochanges	boolean	false
+# Skrive endringene til diskene?
+partman-base	partman/confirm_nooverwrite	boolean	false
+# Dummy template for preseeding unavailable questions
+d-i	partman/confirm_write_new_label	string	true
+# for internal use; can be preseeded
+partman-base	partman/default_filesystem	string	ext4
+# for internal use; can be preseeded
+partman-base	partman/early_command	string	
+# 
+# Choices: 
+partman-base	partman/exception_handler	select	
+# 
+partman-base	partman/exception_handler_note	note	
+# Hvordan skal det ledige området brukes:
+# Choices: 
+partman-base	partman/free_space	select	
+# for internal use; can be preseeded
+# Choices: traditional, label, uuid
+partman-target	partman/mount_style	select	uuid
+# Det ledige området begynner på  og slutter ved .
+partman-base	partman/show_free_chs	note	
+# Partisjonen begynner på  og slutter ved .
+partman-base	partman/show_partition_chs	note	
+# Hva skal gjøres med denne enheten:
+# Choices: 
+partman-base	partman/storage_device	select	
+# Skal det opprettes en vanlig brukerkonto?
+user-setup-udeb	passwd/make-user	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	passwd/md5	string	true
+# Tillate innlogging som root?
+user-setup-udeb	passwd/root-login	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	passwd/shadow	string	true
+# for internal use only
+user-setup-udeb	passwd/user-default-groups	string	sudo
+# Skriv inn brukerens hele og fulle navn:
+user-setup-udeb	passwd/user-fullname	string	Ukraina
+# for internal use only
+user-setup-udeb	passwd/user-uid	string	
+# Brukernavnet for kontoen din:
+user-setup-udeb	passwd/username	string	ukraina
+# Ugyldig brukernavn
+user-setup-udeb	passwd/username-bad	error	
+# Reservert brukernavn
+user-setup-udeb	passwd/username-reserved	error	
+# for internal use; can be preseeded
+pkgsel	pkgsel/include	string	
+# for internal use; can be preseeded
+pkgsel	pkgsel/run_tasksel	boolean	true
+# Oppdateringsadministrasjon på dette systemet:
+# Choices: Ingen automatiske oppdateringer, Installer sikkerhetsoppdateringer automatisk
+pkgsel	pkgsel/update-policy	select	none
+# for internal use; can be preseeded
+pkgsel	pkgsel/updatedb	boolean	true
+# for internal use; can be preseeded
+# Choices: none, safe-upgrade, full-upgrade
+pkgsel	pkgsel/upgrade	select	safe-upgrade
+# Dummy template for preseeding unavailable questions
+d-i	popularity-contest/participate	string	false
+# Dummy template for preseeding unavailable questions
+d-i	popularity-contest/submiturls	string	https://popcon.debian.org/cgi-bin/popcon.cgi
+# for internal use; can be preseeded
+d-i	preseed/boot_command	string	
+# Sjekksumfeil
+d-i	preseed/checksum_error	error	
+# Klarte ikke å kjøre forhåndsinnstilt kommando
+d-i	preseed/command_failed	error	
+# for internal use; can be preseeded
+d-i	preseed/early_command	string	
+# for internal use; can be preseeded
+d-i	preseed/file	string	
+# for internal use; can be preseeded
+d-i	preseed/file/checksum	string	
+# for internal use; can be preseeded
+d-i	preseed/include	string	
+# for internal use; can be preseeded
+d-i	preseed/include/checksum	string	
+# for internal use; can be preseeded
+d-i	preseed/include_command	string	
+# for internal use; can be preseeded
+d-i	preseed/interactive	boolean	false
+# for internal use; can be preseeded
+d-i	preseed/late_command	string	
+# Klarte ikke å behandle fila med forhåndsoppsettet
+d-i	preseed/load_error	error	
+# Klarte ikke å finne fila med forhåndsoppsettet
+d-i	preseed/retrieve_error	error	
+# for internal use; can be preseeded
+d-i	preseed/run	string	
+# for internal use; can be preseeded
+d-i	preseed/run/checksum	string	
+# Plasseringen av den initielle fila med forhåndsoppsett:
+network-preseed	preseed/url	string	
+# for internal use; can be preseeded
+network-preseed	preseed/url/checksum	string	
+# for internal use; can be preseeded
+d-i	rescue/enable	boolean	false
+# Klarte ikke kopiere fila fra installasjonsmedium. Vil du prøve en gang til?
+d-i	retriever/cdrom/error	boolean	true
+# Dummy template for preseeding unavailable questions
+d-i	samba-common/dhcp	string	false
+# Dummy template for preseeding unavailable questions
+d-i	samba-common/workgroup	string	skolelinux
+# Kan ikke lagre logger
+d-i	save-logs/bad_directory	error	
+# Mappe der feilsøkingslogger skal lagres:
+d-i	save-logs/directory	string	/mnt
+# Klarte ikke å montere disketten
+d-i	save-logs/floppy_mount_failed	error	
+# Nett-tjener startet
+d-i	save-logs/httpd_running	note	
+# Sett inn en formatert diskett i stasjonen
+d-i	save-logs/insert_floppy	note	
+# Hvordan skal feilsøkingslogger lagres eller overføres?
+# Choices: tilby over nettet, montert filsystem, diskett
+d-i	save-logs/menu	select	
+# Nett-tjener startet, men nettverket er ikke oppe
+d-i	save-logs/no_network	note	
+# Dummy template for preseeding unavailable questions
+unknown	tasksel/desktop	string	kde
+# Velg din tidssone:
+# Choices: Europe/Oslo
+tzsetup-udeb	time/zone	select	Europe/Oslo
+# location
+# Choices: McMurdo, Rothera, Palmer, Mawson, Davis, Casey, Vostok, DumontDUrville, Syowa
+tzsetup-udeb	tzsetup/country/AQ	select	
+# state
+# Choices: Australsk hovedstadsterritorium, New South Wales, Victoria, Nordterritoriet, Queensland, Sør-Australia, Tasmania, Vest-Australia, Eyre Highway, Yancowinna County, Lord_Howe
+tzsetup-udeb	tzsetup/country/AU	select	Australia/Canberra
+# state
+# Choices: Acre, Alagoas, Amasonas, Amapá, Bahia, Ceará, Distrito Federal, Espírito Santo, Fernando de Noronha, Goiás, Maranhão, Minas Gerais, Mato Grosso do Sul, Mato Grosso, Pará, Paraíba, Pernambuco, Piauí, Paraná, Rio de Janeiro, Rio Grande do Norte, Rondônia, Roraima, Rio Grande do Sul, Santa Catarina, Sergipe, São Paulo, Tocantins
+tzsetup-udeb	tzsetup/country/BR	select	America/Sao_Paulo
+# zone
+# Choices: Newfoundland, Atlanterhavet, Østlig, Central, Øst-Saskatchewan, Saskatchewan, Fjell, Stillehavet
+tzsetup-udeb	tzsetup/country/CA	select	Canada/Eastern
+# city
+# Choices: Kinshasa, Lubumbashi
+tzsetup-udeb	tzsetup/country/CD	select	Africa/Kinshasa
+# zone
+# Choices: Santiago, Påskeøya
+tzsetup-udeb	tzsetup/country/CL	select	America/Santiago
+# zone
+# Choices: Asia/Nicosia (most of Cyprus), Asia/Famagusta (Northern Cyprus)
+tzsetup-udeb	tzsetup/country/CY	select	
+# location
+# Choices: Guayaquil, Galapagos
+tzsetup-udeb	tzsetup/country/EC	select	America/Guayaquil
+# location
+# Choices: Madrid, Ceuta, Kanariøyene
+tzsetup-udeb	tzsetup/country/ES	select	Europe/Madrid
+# location
+# Choices: Yap, Truk, Pohnpei, Kosrae
+tzsetup-udeb	tzsetup/country/FM	select	Pacific/Ponape
+# location
+# Choices: Godthåb, Danmarkshavn, Scoresbysund, Thule
+tzsetup-udeb	tzsetup/country/GL	select	America/Godthab
+# city
+# Choices: Vestlig (Sumatra\, Jakarta\, Java\, Vest- og Sentral-Kalimantan), Sentral (Sulawesi\, Bali\, Nusa Tenggara\, Øst- og Sør-Kalimantan), Østlig (Maluku\, Papua)
+tzsetup-udeb	tzsetup/country/ID	select	Asia/Jakarta
+# zone
+# Choices: Tarawa, Enderbury, Kiritimati
+tzsetup-udeb	tzsetup/country/KI	select	Pacific/Tarawa
+# city
+# Choices: Almaty, Qyzylorda, Aqtobe, Aqtau, Oral
+tzsetup-udeb	tzsetup/country/KZ	select	Asia/Almaty
+# city
+# Choices: Ulan Bator, Hovd, Choibalsan
+tzsetup-udeb	tzsetup/country/MN	select	Asia/Ulaanbaatar
+# zone
+# Choices: North-West, Stillehavet, Sonora, Central, Sørøst
+tzsetup-udeb	tzsetup/country/MX	select	Mexico/General
+# location
+# Choices: Auckland, Chatham
+tzsetup-udeb	tzsetup/country/NZ	select	Pacific/Auckland
+# location
+# Choices: Tahiti, Marquesas, Gambier
+tzsetup-udeb	tzsetup/country/PF	select	Pacific/Tahiti
+# zone
+# Choices: Port Moresby, Bougainville
+tzsetup-udeb	tzsetup/country/PG	select	
+# location
+# Choices: Lisboa, Madeira, Azorene
+tzsetup-udeb	tzsetup/country/PT	select	Europe/Lisbon
+# zone
+# Choices: Kaliningrad, Moskva+00 - Moskva, Samara, Moskva+02 - Jekaterinburg, Moskva+03 - Omsk, Moskva+04 - Krasnojarsk, Moskva+05 - Irkutsk, Moskva+06 - Jakutsk, Moskva+07 - Vladivostok, Moskva+08 - Magadan, Kamtsjatka
+tzsetup-udeb	tzsetup/country/RU	select	Europe/Moscow
+# location
+# Choices: Johnston, Midway, Wake
+tzsetup-udeb	tzsetup/country/UM	select	Pacific/Midway
+# zone
+# Choices: Østlig, Central, Fjell, Stillehavet, Alaska, Hawaii, Arizona, Østre Indiana, Samoa
+tzsetup-udeb	tzsetup/country/US	select	US/Eastern
+# Tomt passord
+user-setup-udeb	user-setup/password-empty	error	
+# Feil ved inntastingen av passordet
+user-setup-udeb	user-setup/password-mismatch	error	
+# Dummy template for preseeding unavailable questions
+d-i	uswsusp/encrypt	string	false
