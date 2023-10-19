@@ -40,7 +40,7 @@ tastaturutleggene.
 For å aktivere, trykk 'tab' på oppstartmenyen fra installasjonsmediet, og erstatt
 desktop=xfce med
 
-  locale=uk_UA.UTF-8 keymap=ua keyboard-configuration/toggle=Alt+Shift url=https://people.skolelinux.org/pere/preseed-ukrainina.cfg
+  locale=uk_UA.UTF-8 keymap=ua keyboard-configuration/toggle=Alt+Shift url=https://people.skolelinux.org/pere/preseed-ukraina.cfg
 
 Katalogen debconf-selections inneholder resultatet fra kjøring av
 
