@@ -19,10 +19,12 @@ Preseed-mulighetene i Debian er beskrevet i https://www.debian.org/releases/stab
 10) DONE: oppdatere systemet til nyeste versjon med sudo apt update && sudo apt dist-upgrade -y (eller tilsvarende) før systemet starter opp om mulig
 11) Se https://wiki.nuug.no/skolelinux for detaljer rundt passord
 
-Merk at installasjonen forsatt har kjent hardkodet passord for bruker `ukraina` som
-både har ssh og sudo-tilgang.  Det er ikke satt root-passord.
-
 Punktene 3-4 er endel jobb og ikke forsøkt i denne omgang.
+
+Merk at installasjonen ikke har kjent hardkodet passord for bruker `ukraina` slik
+oppsettet i wikien beskriver.  Dette da brukeren er tilgjengelig over nett via
+blant annet ssh og cups.  Det lages et tilfeldig passord som lagres i
+~/README-change-password.txt. Root-brukeren er uten passord og må nås via sudo.
 
 Tastatur settes opp for både ukrainsk og amerikansk.  Trykk på Alt+Shift bytter mellom
 tastaturutleggene.
