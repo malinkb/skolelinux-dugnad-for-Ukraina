@@ -14,7 +14,7 @@ Preseed-mulighetene i Debian er beskrevet i https://www.debian.org/releases/stab
 6) DONE: Vi skal ha med main non-free-firmware contrib non-free
 7) DONE: pakken firmware-b43-installer bør installeres for maskiner som trenger den.
 8) DONE: pakken task-ukrainian-desktop er med
-9) PARTLY DONE: kiosk-modus må settes opp, slik at maskinen starter rett opp i skrivebord
+9) DONE: kiosk-modus må settes opp, slik at maskinen starter rett opp i skrivebord
    uten noe innlogging, uten skjermlåsing og at maskinen logger inn igjen om man logger ut
 10) DONE: oppdatere systemet til nyeste versjon med sudo apt update && sudo apt dist-upgrade -y (eller tilsvarende) før systemet starter opp om mulig
 11) Se https://wiki.nuug.no/skolelinux for detaljer rundt passord
